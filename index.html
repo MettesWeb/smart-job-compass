@@ -59,9 +59,9 @@ button,a,input,textarea{transition:.18s ease}
 .brand-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--royal),var(--turquoise));font-weight:900;box-shadow:0 0 28px rgba(45,212,191,.18)}
 .brand strong{display:block}.brand small{display:block;color:var(--muted);font-size:.75rem}
 .sidebar nav{display:grid;gap:.3rem}
-.nav-link{display:flex;align-items:center;gap:.8rem;min-height:48px;padding:.7rem .8rem;border-radius:12px;color:var(--muted-strong);text-decoration:none;border:1px solid transparent}
-.nav-link:hover{background:rgba(59,130,246,.10);border-color:var(--border-blue)}
-.nav-link.active{color:white;background:linear-gradient(90deg,rgba(37,99,235,.22),rgba(45,212,191,.08));border-color:rgba(45,212,191,.32);box-shadow:0 0 22px rgba(45,212,191,.08)}
+.nav-link{display:flex;align-items:center;gap:.8rem;min-height:48px;padding:.7rem .8rem;border-radius:12px;color:#ffffff;text-decoration:none;border:1px solid rgba(59,130,246,.32);background:#0d2038;appearance:none;-webkit-appearance:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+.nav-link:hover{background:#15345a;border-color:var(--turquoise);color:#ffffff}
+.nav-link.active{color:#ffffff;background:linear-gradient(90deg,#1d4ed8,#0f766e);border-color:#5eead4;box-shadow:0 0 22px rgba(45,212,191,.16)}
 .nav-icon{width:1.2rem;text-align:center;color:var(--turquoise)}
 .sidebar-note{position:absolute;left:1rem;right:1rem;bottom:1rem;display:flex;align-items:center;gap:.55rem;padding:.75rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
 .status-dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--turquoise);box-shadow:0 0 12px rgba(45,212,191,.8)}
@@ -209,6 +209,14 @@ button[data-go]{font-family:inherit}
   .sidebar nav{padding-bottom:4rem}
 }
 
+.job-import-note{margin:1rem 0;padding:1rem;border:1px solid rgba(212,175,55,.48);border-radius:14px;background:rgba(212,175,55,.08);color:#fff4c4}
+.job-import-note strong{color:#ffffff}
+.job-helper-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin:.8rem 0 1rem}
+.job-status{min-height:1.5rem;margin:.55rem 0;color:#a7f3d0;font-weight:700}
+.job-status.error{color:#fecaca}
+.nav-link .nav-icon{color:#7dd3fc}
+@media(max-width:560px){.job-helper-actions .small-button{width:100%}}
+
   .brand{background:none;border:0;color:inherit;width:100%;text-align:left;cursor:pointer}
 .link-button{background:none;border:0;color:var(--muted);padding:0;text-decoration:underline;cursor:pointer;font:inherit}
 .link-button:hover{color:white}
@@ -252,7 +260,7 @@ button[data-go]{font-family:inherit}
       </nav>
       <div class="sidebar-note">
         <span class="status-dot" aria-hidden="true"></span>
-        <span>Beta 2.1 · CV-Testprofil</span>
+        <span>Beta 2.2 · reparierte Testversion</span>
       </div>
     </aside>
 
@@ -782,14 +790,26 @@ button[data-go]{font-family:inherit}
   <p class="section-label">SCHRITT 4</p>
   <h2>Stellenanzeige einfügen</h2>
   <p>Die Analyse vergleicht die Anzeige getrennt mit deinen Fähigkeiten, privaten Projekten und Wünschen.</p>
-  <label class="block-label" for="jobUrl">Optional: Link zur Stellenanzeige
-    <input id="jobUrl" data-job-field type="url" placeholder="https://...">
+
+  <div class="job-import-note">
+    <strong>Wichtig für diese Beta:</strong> Ein Link allein enthält noch nicht automatisch den Text der Stellenanzeige. Du kannst den Text aus der Jobseite kopieren, aus der Zwischenablage einfügen oder den eingebauten Testjob laden.
+  </div>
+
+  <label class="block-label" for="jobUrl">Link zur Stellenanzeige
+    <input id="jobUrl" data-job-field type="url" placeholder="https://www.remoterocketship.com/...">
   </label>
+  <div class="job-helper-actions">
+    <button class="small-button ghost" id="openJobUrlButton" type="button">Originalseite öffnen</button>
+    <button class="small-button ghost" id="pasteJobButton" type="button">Text aus Zwischenablage einfügen</button>
+    <button class="small-button ghost gold-outline" id="loadDemoJobButton" type="button">Remote-Rocketship-Testjob laden</button>
+  </div>
+  <p id="jobInputStatus" class="job-status" role="status" aria-live="polite"></p>
+
   <label class="block-label" for="jobDescription">Vollständige Stellenbeschreibung
-    <textarea id="jobDescription" data-job-field rows="20" placeholder="Stellenanzeige hier einfügen ..."></textarea>
+    <textarea id="jobDescription" data-job-field rows="20" placeholder="Stellenbeschreibung hier einfügen ..."></textarea>
   </label>
   <div class="page-actions">
-    <button class="secondary-button" id="clearJobButton" type="button">Feld komplett leeren</button>
+    <button class="secondary-button" id="clearJobButton" type="button">Alles löschen</button>
     <button class="primary-button" id="analyzeJobButton" type="button">Job analysieren</button>
   </div>
 </section>
@@ -979,6 +999,37 @@ const KEYS = {
   applications: "sjc_applications_v2"
 };
 
+const DEMO_JOB_URL = "https://www.remoterocketship.com/publicjobs/company/the-doing-co-co/jobs/e-commerce-operations-coordinator-netherlands-remote/";
+const DEMO_JOB_DESCRIPTION = `E-Commerce Operations Coordinator – The Doing Co
+Netherlands – Remote
+Full-time
+
+BETA-TESTTEXT: Diese Beschreibung dient ausschließlich dazu, die Funktionen des Smart Job Compass zu testen. Sie wurde nicht automatisch von der verlinkten Seite ausgelesen.
+
+Responsibilities
+- Coordinate day-to-day e-commerce operations and keep digital workflows organised.
+- Maintain product information, online listings, pricing and order-related records.
+- Support Shopify or comparable e-commerce systems.
+- Work with spreadsheets, reports and operational data.
+- Coordinate with customers, partners and internal teams.
+- Improve processes and document recurring workflows.
+- Support content, campaigns or social media activities when required.
+
+Requirements
+- Experience in e-commerce, operations, project coordination or customer support.
+- Strong organisational and communication skills.
+- Confident use of Excel or Google Sheets.
+- Familiarity with Shopify, CRM systems and digital collaboration tools.
+- Ability to work independently in a remote environment.
+- Very good written and spoken English.
+- Experience with AI tools, automation, content or social media is an advantage.
+
+Working conditions
+- Remote position based in the Netherlands or compatible European time zone.
+- Full-time employment.
+- CV in English requested.
+- Portfolio or examples of digital projects are helpful.`;
+
 const MARIT_BETA_PROFILE = {
   fields: {
     fullName: "Marit Silva Gebhardt",
@@ -1056,7 +1107,7 @@ function showView(view, updateHash=true){
     panel.hidden=!active;
     panel.setAttribute("aria-hidden", String(!active));
   });
-  document.querySelectorAll("[data-view]").forEach(btn=>{
+  document.querySelectorAll(".nav-link[data-view], .brand[data-view]").forEach(btn=>{
     const active=btn.dataset.view===view;
     btn.classList.toggle("active",active);
     if(active) btn.setAttribute("aria-current","page");
@@ -1277,7 +1328,15 @@ function analyzeJob(){
   saveAllProfileFields();
   const jobDescription = document.getElementById("jobDescription")?.value.trim();
   const jobUrl = document.getElementById("jobUrl")?.value.trim() || "";
-  if(!jobDescription){ alert("Bitte füge zuerst eine Stellenbeschreibung ein."); return; }
+  if(!jobDescription){
+    const status=document.getElementById("jobInputStatus");
+    if(status){
+      status.textContent = jobUrl ? "Der Link ist gespeichert, aber für die Analyse fehlt noch der Text der Stellenbeschreibung." : "Bitte füge zuerst eine Stellenbeschreibung ein.";
+      status.classList.add("error");
+    }
+    document.getElementById("jobDescription")?.focus();
+    return;
+  }
 
   const data = profile();
   const job = jobDescription.toLowerCase();
@@ -1514,21 +1573,77 @@ function updateDashboard(){
   setText("dashboardApplications",String(readJSON(KEYS.applications,[]).length));
 }
 
+function setJobStatus(message, isError=false){
+  const status=document.getElementById("jobInputStatus");
+  if(!status) return;
+  status.textContent=message;
+  status.classList.toggle("error",isError);
+}
+
 function initAnalyzePage(){
   const desc=document.getElementById("jobDescription");
   const url=document.getElementById("jobUrl");
   if(!desc) return;
+
   const draft=readJSON("sjc_job_draft",{});
   desc.value=draft.description||"";
   if(url) url.value=draft.url||"";
-  [desc,url].filter(Boolean).forEach(el=>el.addEventListener("input",()=>writeJSON("sjc_job_draft",{description:desc.value,url:url?.value||""})));
+
+  const persistDraft=()=>writeJSON("sjc_job_draft",{description:desc.value,url:url?.value||""});
+  [desc,url].filter(Boolean).forEach(el=>el.addEventListener("input",()=>{
+    persistDraft();
+    setJobStatus("");
+  }));
+
   document.getElementById("clearJobButton")?.addEventListener("click",()=>{
-    desc.value=""; if(url) url.value=""; writeJSON("sjc_job_draft",{});
+    desc.value="";
+    if(url) url.value="";
+    writeJSON("sjc_job_draft",{});
+    setJobStatus("Die Stellenanzeige wurde vollständig geleert.");
     desc.focus();
   });
+
+  document.getElementById("openJobUrlButton")?.addEventListener("click",()=>{
+    const value=url?.value.trim();
+    if(!value){ setJobStatus("Bitte füge zuerst einen Link ein.",true); url?.focus(); return; }
+    try{
+      const parsed=new URL(value);
+      window.open(parsed.href,"_blank","noopener,noreferrer");
+      setJobStatus("Die Originalseite wurde in einem neuen Tab geöffnet.");
+    }catch{
+      setJobStatus("Der eingefügte Link ist nicht gültig.",true);
+      url?.focus();
+    }
+  });
+
+  document.getElementById("pasteJobButton")?.addEventListener("click",async()=>{
+    try{
+      const clip=(await navigator.clipboard.readText()).trim();
+      if(!clip){ setJobStatus("In der Zwischenablage ist kein Text.",true); return; }
+      if(/^https?:\/\/\S+$/i.test(clip)){
+        if(url) url.value=clip;
+        setJobStatus("Der Link wurde eingefügt. Kopiere jetzt zusätzlich den Text der Stellenanzeige oder nutze den Testjob.");
+      }else{
+        desc.value=clip;
+        setJobStatus("Der Text aus der Zwischenablage wurde eingefügt.");
+      }
+      persistDraft();
+    }catch{
+      setJobStatus("Der Browser hat den Zugriff auf die Zwischenablage nicht erlaubt. Bitte füge den Text mit Strg+V ein.",true);
+      desc.focus();
+    }
+  });
+
+  document.getElementById("loadDemoJobButton")?.addEventListener("click",()=>{
+    if(url) url.value=DEMO_JOB_URL;
+    desc.value=DEMO_JOB_DESCRIPTION;
+    persistDraft();
+    setJobStatus("Der Remote-Rocketship-Testjob wurde geladen. Du kannst ihn jetzt analysieren.");
+    desc.scrollIntoView({behavior:"smooth",block:"center"});
+  });
+
   document.getElementById("analyzeJobButton")?.addEventListener("click",analyzeJob);
 }
-
 function initSettings(){
   document.getElementById("exportDataButton")?.addEventListener("click",()=>{
     const payload={profile:profile(),analysis:readJSON(KEYS.analysis,null),currentJob:readJSON(KEYS.currentJob,null),savedJobs:readJSON(KEYS.savedJobs,[]),applications:readJSON(KEYS.applications,[])};
@@ -1556,7 +1671,7 @@ function initSettings(){
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
-  document.querySelectorAll("[data-view]").forEach(btn=>btn.addEventListener("click",()=>showView(btn.dataset.view)));
+  document.querySelectorAll(".nav-link[data-view], .brand[data-view]").forEach(btn=>btn.addEventListener("click",()=>showView(btn.dataset.view)));
   document.querySelectorAll("[data-go]").forEach(btn=>btn.addEventListener("click",()=>{
     const focusId=btn.dataset.focus;
     showView(btn.dataset.go);
