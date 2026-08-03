@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Smart Job Compass – Remote Jobs prüfen und Bewerbungen vorbereiten.">
   <meta name="theme-color" content="#081526">
-  <title>Dashboard · Smart Job Compass</title>
+  <title>Ergebnis · Smart Job Compass</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
-<body data-page="index.html">
+<body data-page="results.html">
   <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
   <div class="ambient ambient-a" aria-hidden="true"></div>
   <div class="ambient ambient-b" aria-hidden="true"></div>
@@ -24,13 +24,13 @@
         <span class="brand-mark" aria-hidden="true">SJC</span>
         <span><strong>Smart Job Compass</strong><small>Remote Job Assistant</small></span>
       </a>
-      <nav aria-label="Hauptnavigation"><a href="index.html" class="nav-link active"><span aria-hidden="true" class="nav-icon">⌂</span><span>Dashboard</span></a>
+      <nav aria-label="Hauptnavigation"><a href="index.html" class="nav-link "><span aria-hidden="true" class="nav-icon">⌂</span><span>Dashboard</span></a>
 <a href="profile.html" class="nav-link "><span aria-hidden="true" class="nav-icon">◈</span><span>Mein Profil</span></a>
 <a href="skills.html" class="nav-link "><span aria-hidden="true" class="nav-icon">✦</span><span>Fähigkeiten</span></a>
 <a href="goals.html" class="nav-link "><span aria-hidden="true" class="nav-icon">⌁</span><span>Wünsche</span></a>
 <a href="jobs.html" class="nav-link "><span aria-hidden="true" class="nav-icon">⌕</span><span>Remote Jobs finden</span></a>
 <a href="analyze.html" class="nav-link "><span aria-hidden="true" class="nav-icon">◎</span><span>Job prüfen</span></a>
-<a href="results.html" class="nav-link "><span aria-hidden="true" class="nav-icon">◉</span><span>Ergebnis</span></a>
+<a href="results.html" class="nav-link active"><span aria-hidden="true" class="nav-icon">◉</span><span>Ergebnis</span></a>
 <a href="saved.html" class="nav-link "><span aria-hidden="true" class="nav-icon">★</span><span>Gespeicherte Jobs</span></a>
 <a href="applications.html" class="nav-link "><span aria-hidden="true" class="nav-icon">▤</span><span>Bewerbungen</span></a>
 <a href="settings.html" class="nav-link "><span aria-hidden="true" class="nav-icon">⚙</span><span>Einstellungen</span></a></nav>
@@ -44,59 +44,54 @@
       <header class="topbar">
         <div>
           <p class="eyebrow">SMART REMOTE LIFE · BUSINESS TOOL</p>
-          <h1>Dashboard</h1>
+          <h1>Ergebnis</h1>
         </div>
         <a class="small-button ghost" href="settings.html">Profil verwalten</a>
       </header>
       <main id="main-content" tabindex="-1">
         
-<section class="hero-panel glass-card">
+<section class="result-hero glass-card">
   <div>
-    <span class="gold-badge">Beta-Version für Remote Jobs</span>
-    <h2>Finde schneller Jobs, die wirklich zu dir passen.</h2>
-    <p class="lead">
-      Der Smart Job Compass trennt klar zwischen deiner bisherigen Erfahrung,
-      deinen privat aufgebauten Fähigkeiten und deinem gewünschten nächsten Schritt.
-    </p>
-    <div class="hero-actions">
-      <a class="primary-button" href="profile.html">Lebenslauf hochladen</a>
-      <a class="secondary-button" href="profile.html#manual">Daten manuell eingeben</a>
-    </div>
+    <span class="gold-badge">Deine Auswertung</span>
+    <h2 id="resultRecommendation">Noch keine Analyse vorhanden</h2>
+    <p id="resultSummary">Prüfe zuerst eine Stellenanzeige.</p>
   </div>
-  <div class="compass-visual" aria-hidden="true">
-    <div class="compass-ring ring-1"></div>
-    <div class="compass-ring ring-2"></div>
-    <div class="compass-ring ring-3"></div>
-    <div class="compass-line"></div>
-    <div class="compass-center">AI</div>
-    <span class="signal s1"></span><span class="signal s2"></span><span class="signal s3"></span>
+  <div class="overall-score" id="overallScore">–</div>
+</section>
+
+<section class="score-grid">
+  <article class="score-card glass-card"><span>Fachliche Eignung</span><strong id="skillScore">–</strong><small>Lebenslauf + Fähigkeiten</small></article>
+  <article class="score-card glass-card"><span>Private Praxis</span><strong id="privateScore">–</strong><small>Projekte & Selbststudium</small></article>
+  <article class="score-card glass-card"><span>Wunsch-Fit</span><strong id="preferenceScore">–</strong><small>Zielrichtung & Rahmen</small></article>
+  <article class="score-card glass-card"><span>Remote-Fit</span><strong id="remoteScore">–</strong><small>Arbeitsmodell</small></article>
+  <article class="score-card glass-card"><span>Arbeitszeit-Fit</span><strong id="hoursScore">–</strong><small>Stundenmodell</small></article>
+</section>
+
+<section class="analysis-grid">
+  <article class="glass-card section-card"><h2>Das passt</h2><ul id="strengthsList"></ul></article>
+  <article class="glass-card section-card"><h2>Fehlende Fähigkeiten</h2><ul id="gapsList"></ul></article>
+  <article class="glass-card section-card"><h2>Warnsignale</h2><ul id="warningsList"></ul></article>
+  <article class="glass-card section-card"><h2>Angeforderte Unterlagen</h2><ul id="documentsList"></ul></article>
+</section>
+
+<section class="glass-card section-card">
+  <h2>Was könnte deine Chancen verbessern?</h2>
+  <ul id="improvementsList"></ul>
+</section>
+
+<section class="glass-card section-card">
+  <h2>Wie möchtest du weitermachen?</h2>
+  <p>Speichere die Stelle für später, erstelle einen Bewerbungsentwurf oder verwirf sie vollständig.</p>
+  <div class="page-actions wrap">
+    <button class="secondary-button" id="discardJobButton" type="button">Nicht bewerben</button>
+    <button class="secondary-button gold-outline" id="saveJobButton" type="button">Für später speichern</button>
+    <button class="primary-button" id="createApplicationButton" type="button">Bewerbungsunterlagen erstellen</button>
   </div>
 </section>
 
-<section class="stats-grid" aria-label="Übersicht">
-  <article class="stat-card glass-card"><span>Profilstatus</span><strong id="dashboardProfile">0 %</strong><small>vollständig</small></article>
-  <article class="stat-card glass-card"><span>Geprüfte Jobs</span><strong id="dashboardChecked">0</strong><small>lokal gespeichert</small></article>
-  <article class="stat-card glass-card"><span>Gespeichert</span><strong id="dashboardSaved">0</strong><small>für später</small></article>
-  <article class="stat-card glass-card"><span>Bewerbungen</span><strong id="dashboardApplications">0</strong><small>vorbereitet</small></article>
-</section>
-
-<section class="two-column">
-  <article class="glass-card section-card">
-    <p class="section-label">SO FUNKTIONIERT ES</p>
-    <h2>Drei Datenquellen, eine ehrliche Analyse</h2>
-    <ol class="process-list">
-      <li><strong>Beruflich:</strong> Was steht offiziell in deinem Lebenslauf?</li>
-      <li><strong>Privat:</strong> Was hast du dir selbst beigebracht oder als Projekt umgesetzt?</li>
-      <li><strong>Ziel:</strong> Welche Art Remote Job suchst du wirklich?</li>
-    </ol>
-  </article>
-  <article class="glass-card section-card accent-card">
-    <p class="section-label">NÄCHSTER SCHRITT</p>
-    <h2>Profil aufbauen</h2>
-    <p>Beginne mit deinem vorhandenen Lebenslauf und ergänze nur, was dort noch nicht sichtbar ist.</p>
-    <a class="primary-button" href="profile.html">Profil öffnen</a>
-  </article>
-</section>
+<div class="page-actions">
+  <a class="secondary-button" href="analyze.html" id="newJobLink">Neue Stelle prüfen</a>
+</div>
 
       </main>
       

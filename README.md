@@ -1,13 +1,29 @@
-# Smart Job Compass – Beta 0.3
+# Smart Job Compass v2.0
 
-Aktualisiert nach der Blueprint Design Language:
+Modulare, mobile und barriereärmere Beta-Version für Remote-Job-Suchende.
 
-- Dark Navy
-- Royal Blue
-- Türkis
-- Gold nur als Akzent
-- moderne Neonlinien und dezenter Glow
-- Glass Cards
-- kein Lila
+## Enthalten
+- Dashboard
+- Lebenslauf-Upload als vorbereitete Oberfläche
+- manuelle Berufserfahrung
+- private Projekte
+- Zertifikate und Portfolio
+- Remote-Berufsfelder, Skills und Tools
+- Wünsche und Ausschlusskriterien
+- Remote-Job-Plattformen
+- Stellenanalyse mit getrennten Scores
+- Speichern, Verwerfen und Bewerbungsentwurf
+- gespeicherte Jobs
+- lokale Datensicherung
+- Impressum, Datenschutz, Disclaimer und Werbehinweis als Platzhalter
+- responsive Seitenleiste
+- Tastaturfokus, Labels und kontrastreiche Farbwelt
 
-Die Funktionalität bleibt wie in Beta 0.2. Die Analyse ist weiterhin regelbasiert und noch nicht mit einer echten KI-API verbunden.
+## Technik
+Reines HTML, CSS und JavaScript. Keine externe API. Daten werden lokal im Browser gespeichert.
+
+## GitHub / Netlify
+Alle Dateien in das Repository hochladen. Netlify veröffentlicht das Root-Verzeichnis ohne Build-Befehl.
+
+## Wichtig
+Die rechtlichen Seiten sind Platzhalter und müssen vor einer öffentlichen Vermarktung geprüft und vervollständigt werden.
