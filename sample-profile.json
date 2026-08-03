@@ -1,11 +1,11 @@
 {
-  "fullName": "Marit Silva Gebhardt",
-  "targetRoles": "Digital Marketing, AI Automation, Content, Customer Success, Operations",
-  "hours": "25–30 Stunden",
-  "workModel": "Remote oder Hybrid",
-  "employmentType": "Festanstellung",
-  "salary": "ab ca. 2.200 € netto / Monat",
-  "skills": "ChatGPT, Gemini, NotebookLM, Canva, CapCut, Content Creation, CRM, Marketing, Projektkoordination, digitale Workflows",
-  "preferredTasks": "Content planen, digitale Prozesse verbessern, KI praktisch einsetzen, Projekte koordinieren, Unternehmen weiterentwickeln",
-  "exclusions": "reine Kaltakquise, Schichtarbeit, vollständig vor Ort, reine Provision"
+  "roles": ["Marketing", "Content", "Customer Success"],
+  "tasks": ["Schreiben", "Organisieren", "Content erstellen", "KI nutzen", "Projekte koordinieren"],
+  "tools": ["MS Office", "Google Workspace", "Canva", "ChatGPT", "LinkedIn"],
+  "workModel": ["100 % Remote", "Flexible Arbeitszeiten"],
+  "hours": ["25–30 Stunden"],
+  "employment": ["Festanstellung", "Teilzeit"],
+  "companySize": ["11–50 Mitarbeitende", "51–200 Mitarbeitende"],
+  "experience": ["Junior", "Quereinstieg"],
+  "exclusions": ["Kaltakquise", "Schichtarbeit", "Nur Provision", "Vor-Ort-Pflicht"]
 }

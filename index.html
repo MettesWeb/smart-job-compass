@@ -3,196 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Career Blueprint AI – Bewerbungsassistent für CV-Analyse, Job-Fit und individuelle Bewerbungsunterlagen." />
-  <title>Career Blueprint AI</title>
+  <meta name="description" content="Smart Job Compass – Remote Jobs schneller prüfen und passende Bewerbungsunterlagen vorbereiten." />
+  <title>Smart Job Compass</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div>
-      <p class="eyebrow">Career Blueprint AI</p>
-      <h1>Dein smarter Bewerbungsassistent</h1>
-      <p class="subtitle">
-        Lebenslauf hochladen, Profil ergänzen, Stellenanzeige prüfen und passende Unterlagen vorbereiten.
-      </p>
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="badge">Beta-Version für Remote Jobs</span>
+      <h1>Smart Job Compass</h1>
+      <p>Dein persönlicher Remote-Job-Filter: Profil einmal anlegen, Stellenanzeige einfügen, Passung prüfen.</p>
+      <button class="hero-button" data-next="1">Jetzt starten</button>
     </div>
   </header>
 
-  <main class="app-shell">
-    <nav class="steps" aria-label="Schritte">
-      <button class="step active" data-step="1">1. Lebenslauf</button>
-      <button class="step" data-step="2">2. Profil</button>
+  <main class="app">
+    <nav class="stepbar">
+      <button class="step active" data-step="1">1. Profil</button>
+      <button class="step" data-step="2">2. Wünsche</button>
       <button class="step" data-step="3">3. Job prüfen</button>
       <button class="step" data-step="4">4. Ergebnis</button>
     </nav>
 
-    <section class="panel active" id="step-1">
-      <h2>Lebenslauf hochladen</h2>
-      <p>
-        In dieser ersten Testversion wird die Datei noch nicht automatisch ausgelesen.
-        Der Upload ist bereits vorbereitet; die KI-Anbindung ergänzen wir später.
-      </p>
-      <label class="upload-box">
-        <input id="cvUpload" type="file" accept=".pdf,.doc,.docx" />
-        <span>PDF oder Word auswählen</span>
-      </label>
-      <p id="uploadStatus" class="status-text">Noch keine Datei ausgewählt.</p>
-      <div class="actions">
-        <button class="primary" data-next="2">Weiter zum Profil</button>
-      </div>
+    <section class="panel active" id="panel-1">
+      <div class="section-heading"><span class="section-icon">👤</span><div><h2>Was passt zu dir?</h2><p>Wähle einfach aus. Du musst nicht alles tippen.</p></div></div>
+
+      <div class="form-block"><h3>Berufsfelder</h3><div class="chips" data-group="roles">
+        <button class="chip">Marketing</button><button class="chip">Content</button><button class="chip">Social Media</button><button class="chip">Customer Support</button><button class="chip">Customer Success</button><button class="chip">Assistenz</button><button class="chip">Projektkoordination</button><button class="chip">Operations</button><button class="chip">HR</button><button class="chip">Vertrieb</button><button class="chip">IT & Tech</button><button class="chip">Design</button><button class="chip">Finance</button><button class="chip">Bildung & Training</button>
+      </div></div>
+
+      <div class="form-block"><h3>Aufgaben, die du gerne machst</h3><div class="chips" data-group="tasks">
+        <button class="chip">Schreiben</button><button class="chip">Organisieren</button><button class="chip">Kunden helfen</button><button class="chip">Content erstellen</button><button class="chip">Videos erstellen</button><button class="chip">Präsentationen</button><button class="chip">Recherche</button><button class="chip">Daten analysieren</button><button class="chip">Prozesse verbessern</button><button class="chip">KI nutzen</button><button class="chip">Automatisieren</button><button class="chip">Projekte koordinieren</button><button class="chip">Webinare geben</button><button class="chip">Social Media betreuen</button>
+      </div></div>
+
+      <div class="form-block"><h3>Tools & Kenntnisse</h3><div class="chips" data-group="tools">
+        <button class="chip">MS Office</button><button class="chip">Google Workspace</button><button class="chip">Canva</button><button class="chip">CapCut</button><button class="chip">ChatGPT</button><button class="chip">Gemini</button><button class="chip">NotebookLM</button><button class="chip">CRM</button><button class="chip">HubSpot</button><button class="chip">Notion</button><button class="chip">Trello / Asana</button><button class="chip">WordPress</button><button class="chip">SEO</button><button class="chip">Google Ads</button><button class="chip">Meta Ads</button><button class="chip">LinkedIn</button><button class="chip">TikTok</button><button class="chip">n8n</button><button class="chip">Make</button><button class="chip">Zapier</button>
+      </div></div>
+
+      <label class="text-label">Sonstige Skills oder Tools<input id="otherSkills" type="text" placeholder="z. B. SAP, DATEV, Final Cut Pro" /></label>
+      <div class="actions"><button class="primary" data-next="2">Weiter</button></div>
     </section>
 
-    <section class="panel" id="step-2">
-      <h2>Masterprofil ergänzen</h2>
-      <div class="grid two">
-        <label>
-          Name
-          <input id="fullName" type="text" placeholder="Vor- und Nachname" />
-        </label>
-        <label>
-          Zielrollen
-          <input id="targetRoles" type="text" placeholder="z. B. Marketing, KI-Automation, Customer Success" />
-        </label>
-        <label>
-          Wunsch-Arbeitszeit
-          <select id="hours">
-            <option value="">Bitte wählen</option>
-            <option>10–20 Stunden</option>
-            <option>20–25 Stunden</option>
-            <option>25–30 Stunden</option>
-            <option>30–35 Stunden</option>
-            <option>Vollzeit</option>
-          </select>
-        </label>
-        <label>
-          Arbeitsmodell
-          <select id="workModel">
-            <option value="">Bitte wählen</option>
-            <option>Remote</option>
-            <option>Hybrid</option>
-            <option>Vor Ort</option>
-            <option>Remote oder Hybrid</option>
-          </select>
-        </label>
-        <label>
-          Beschäftigungsart
-          <select id="employmentType">
-            <option value="">Bitte wählen</option>
-            <option>Festanstellung</option>
-            <option>Teilzeit</option>
-            <option>Vollzeit</option>
-            <option>Freelance</option>
-            <option>Offen für mehrere Modelle</option>
-          </select>
-        </label>
-        <label>
-          Gehaltswunsch
-          <input id="salary" type="text" placeholder="z. B. 2.200 € netto / Monat" />
-        </label>
-      </div>
+    <section class="panel" id="panel-2">
+      <div class="section-heading"><span class="section-icon">🧭</span><div><h2>Wie soll dein Remote Job aussehen?</h2><p>Diese Angaben werden später mit jeder Stellenanzeige verglichen.</p></div></div>
 
-      <label>
-        Skills und Tools
-        <textarea id="skills" rows="4" placeholder="z. B. ChatGPT, Canva, CRM, Content Creation, MS Office"></textarea>
-      </label>
+      <div class="form-block"><h3>Arbeitsmodell</h3><div class="chips" data-group="workModel"><button class="chip">100 % Remote</button><button class="chip">Hybrid</button><button class="chip">Vor Ort möglich</button><button class="chip">Flexible Arbeitszeiten</button><button class="chip">Feste Arbeitszeiten</button><button class="chip">Europäische Zeitzone</button></div></div>
 
-      <label>
-        Aufgaben, die du gern machst
-        <textarea id="preferredTasks" rows="3" placeholder="z. B. Content planen, Prozesse verbessern, Kunden begleiten"></textarea>
-      </label>
+      <div class="form-block"><h3>Arbeitszeit</h3><div class="chips" data-group="hours"><button class="chip">10–20 Stunden</button><button class="chip">20–25 Stunden</button><button class="chip">25–30 Stunden</button><button class="chip">30–35 Stunden</button><button class="chip">Vollzeit</button><button class="chip">4-Tage-Woche</button></div></div>
 
-      <label>
-        Ausschlusskriterien
-        <textarea id="exclusions" rows="3" placeholder="z. B. reine Kaltakquise, Schichtarbeit, vollständig vor Ort"></textarea>
-      </label>
+      <div class="form-block"><h3>Beschäftigungsart</h3><div class="chips" data-group="employment"><button class="chip">Festanstellung</button><button class="chip">Teilzeit</button><button class="chip">Vollzeit</button><button class="chip">Minijob</button><button class="chip">Freelance</button><button class="chip">Befristet</button></div></div>
 
-      <div class="actions">
-        <button class="secondary" data-prev="1">Zurück</button>
-        <button class="primary" id="saveProfile" data-next="3">Profil speichern</button>
-      </div>
+      <div class="form-block"><h3>Unternehmensgröße</h3><div class="chips" data-group="companySize"><button class="chip">1–10 Mitarbeitende</button><button class="chip">11–50 Mitarbeitende</button><button class="chip">51–200 Mitarbeitende</button><button class="chip">201–500 Mitarbeitende</button><button class="chip">Großunternehmen</button><button class="chip">Egal</button></div></div>
+
+      <div class="form-block"><h3>Erfahrungsniveau</h3><div class="chips" data-group="experience"><button class="chip">Berufseinstieg</button><button class="chip">Junior</button><button class="chip">Mid-Level</button><button class="chip">Senior</button><button class="chip">Quereinstieg</button></div></div>
+
+      <div class="form-block"><h3>Was möchtest du ausschließen?</h3><div class="chips danger" data-group="exclusions"><button class="chip">Kaltakquise</button><button class="chip">Callcenter</button><button class="chip">Schichtarbeit</button><button class="chip">Wochenendarbeit</button><button class="chip">Reisetätigkeit</button><button class="chip">Nur Provision</button><button class="chip">Führungsverantwortung</button><button class="chip">100 % Telefon</button><button class="chip">Vor-Ort-Pflicht</button></div></div>
+
+      <label class="text-label">Gehaltswunsch<input id="salaryWish" type="text" placeholder="z. B. mindestens 2.200 € netto oder 45.000 € brutto/Jahr" /></label>
+      <div class="actions"><button class="secondary" data-prev="1">Zurück</button><button class="primary" id="saveProfile" data-next="3">Profil speichern</button></div>
     </section>
 
-    <section class="panel" id="step-3">
-      <h2>Stellenanzeige prüfen</h2>
-      <label>
-        Jobbeschreibung
-        <textarea id="jobDescription" rows="14" placeholder="Stellenanzeige hier einfügen ..."></textarea>
-      </label>
-      <div class="actions">
-        <button class="secondary" data-prev="2">Zurück</button>
-        <button class="primary" id="analyzeJob">Job analysieren</button>
-      </div>
+    <section class="panel" id="panel-3">
+      <div class="section-heading"><span class="section-icon">🔍</span><div><h2>Stellenanzeige prüfen</h2><p>Kopiere die komplette Jobbeschreibung hier hinein.</p></div></div>
+      <textarea id="jobDescription" rows="18" placeholder="Stellenbeschreibung hier einfügen ..."></textarea>
+      <div class="actions"><button class="secondary" data-prev="2">Zurück</button><button class="primary" id="analyzeJob">Job analysieren</button></div>
     </section>
 
-    <section class="panel" id="step-4">
-      <div class="result-header">
-        <div>
-          <p class="eyebrow">Analyse</p>
-          <h2 id="recommendation">Noch keine Analyse vorhanden</h2>
-        </div>
-        <div class="score-badge" id="overallScore">–</div>
-      </div>
-
-      <div class="score-grid">
-        <article class="score-card">
-          <span>Fachliche Passung</span>
-          <strong id="skillScore">–</strong>
-        </article>
-        <article class="score-card">
-          <span>Passung zu deinen Wünschen</span>
-          <strong id="preferenceScore">–</strong>
-        </article>
-        <article class="score-card">
-          <span>Keyword-/ATS-Score</span>
-          <strong id="atsScore">–</strong>
-        </article>
-      </div>
-
-      <div class="result-grid">
-        <article>
-          <h3>Was passt?</h3>
-          <ul id="strengths"></ul>
-        </article>
-        <article>
-          <h3>Was fehlt oder ist unklar?</h3>
-          <ul id="gaps"></ul>
-        </article>
-        <article>
-          <h3>Warnsignale</h3>
-          <ul id="warnings"></ul>
-        </article>
-        <article>
-          <h3>Empfohlene Unterlagen</h3>
-          <ul id="documents"></ul>
-        </article>
-      </div>
-
-      <div class="decision-box">
-        <p>Möchtest du dich trotzdem oder gerade deshalb bewerben?</p>
-        <div class="actions">
-          <button class="secondary" id="archiveJob">Stelle archivieren</button>
-          <button class="primary" id="createApplication">Bewerbung vorbereiten</button>
-        </div>
-      </div>
-
-      <div id="applicationDraft" class="application-draft hidden">
-        <h3>Erster Bewerbungsentwurf</h3>
-        <h4>Profilzeile für den Lebenslauf</h4>
-        <p id="cvHeadline"></p>
-        <h4>Kurzes Anschreiben</h4>
-        <p id="coverLetter"></p>
-      </div>
-
-      <div class="actions">
-        <button class="secondary" data-prev="3">Neue Analyse / zurück</button>
-      </div>
+    <section class="panel" id="panel-4">
+      <div class="result-top"><div><span class="badge">Deine Auswertung</span><h2 id="recommendation">Noch keine Analyse</h2><p id="summaryText">Füge zuerst eine Stellenanzeige ein.</p></div><div class="overall-score" id="overallScore">–</div></div>
+      <div class="score-grid"><article class="score-card"><span>Fähigkeiten</span><strong id="skillScore">–</strong></article><article class="score-card"><span>Deine Wünsche</span><strong id="preferenceScore">–</strong></article><article class="score-card"><span>Remote-Fit</span><strong id="remoteScore">–</strong></article><article class="score-card"><span>Arbeitszeit-Fit</span><strong id="hoursScore">–</strong></article></div>
+      <div class="analysis-grid"><article><h3>✅ Das passt</h3><ul id="strengths"></ul></article><article><h3>⚠️ Das fehlt oder ist unklar</h3><ul id="gaps"></ul></article><article><h3>🚩 Warnsignale</h3><ul id="warnings"></ul></article><article><h3>📎 Empfohlene Unterlagen</h3><ul id="documents"></ul></article></div>
+      <div class="decision-card"><h3>Wie möchtest du weitermachen?</h3><p>Du entscheidest selbst, ob du dich trotz möglicher Lücken bewerben möchtest.</p><div class="actions"><button class="secondary" id="archiveJob">Nicht bewerben / archivieren</button><button class="primary" id="createApplication">Trotzdem bewerben</button></div></div>
+      <div class="application-draft hidden" id="applicationDraft"><h3>Erster Bewerbungsentwurf</h3><h4>Lebenslauf-Profil</h4><p id="cvHeadline"></p><h4>Kurzes Anschreiben</h4><p id="coverLetter"></p></div>
+      <div class="actions"><button class="secondary" data-prev="3">Neue Stelle prüfen</button></div>
     </section>
   </main>
 
-  <footer>
-    <p>Prototyp Version 0.1 – lokale Testversion ohne externe KI-API.</p>
-  </footer>
-
+  <footer><p>Smart Job Compass · Beta 0.2 · Fokus: Remote Jobs</p></footer>
   <script src="app.js"></script>
 </body>
 </html>
