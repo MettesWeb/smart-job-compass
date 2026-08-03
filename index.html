@@ -212,6 +212,15 @@ button[data-go]{font-family:inherit}
   .brand{background:none;border:0;color:inherit;width:100%;text-align:left;cursor:pointer}
 .link-button{background:none;border:0;color:var(--muted);padding:0;text-decoration:underline;cursor:pointer;font:inherit}
 .link-button:hover{color:white}
+
+.profile-import-card{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:center;
+  margin-top:1rem;padding:1.15rem;border:1px solid rgba(212,175,55,.45);
+  border-radius:16px;background:linear-gradient(135deg,rgba(212,175,55,.10),rgba(37,99,235,.08));
+}
+.profile-import-card h3{margin:.65rem 0 .2rem}.profile-import-card p{margin:.35rem 0;color:var(--muted-strong)}
+@media(max-width:700px){.profile-import-card{grid-template-columns:1fr}.profile-import-card .secondary-button{width:100%}}
+
 </style>
 </head>
 <body>
@@ -243,7 +252,7 @@ button[data-go]{font-family:inherit}
       </nav>
       <div class="sidebar-note">
         <span class="status-dot" aria-hidden="true"></span>
-        <span>Beta 2.0 · lokal gespeichert</span>
+        <span>Beta 2.1 · CV-Testprofil</span>
       </div>
     </aside>
 
@@ -258,7 +267,7 @@ button[data-go]{font-family:inherit}
 
       <main id="main-content" tabindex="-1">
         <div class="notice-banner">
-          Diese Beta speichert deine Eingaben nur lokal im Browser. Der Lebenslauf wird noch nicht automatisch ausgelesen.
+          Diese Beta speichert deine Eingaben nur lokal im Browser. Für den Test ist ein berufliches Profil aus Marits Lebenslauf hinterlegt; private Kontakt- und Adressdaten wurden nicht eingebettet.
         </div>
         <section class="view-panel" data-view="dashboard" >
 <section class="hero-panel glass-card">
@@ -326,6 +335,16 @@ button[data-go]{font-family:inherit}
     <small>PDF, DOC oder DOCX</small>
   </label>
   <p id="cvFileStatus" class="form-hint" role="status">Noch keine Datei ausgewählt.</p>
+
+  <div class="profile-import-card" aria-labelledby="betaProfileTitle">
+    <div>
+      <span class="gold-badge">Privates Beta-Testprofil</span>
+      <h3 id="betaProfileTitle">Dein Lebenslauf ist für diesen Test bereits hinterlegt</h3>
+      <p>Die beruflichen Stationen, Kernkompetenzen, Weiterbildungen und ausgewählte eigene Projekte werden automatisch als Profilbasis geladen. Deine Anschrift, Telefonnummer und E-Mail-Adresse sind nicht im HTML-Code gespeichert.</p>
+      <p id="betaProfileStatus" class="form-hint" role="status">Testprofil wird beim ersten Öffnen automatisch geladen.</p>
+    </div>
+    <button class="secondary-button gold-outline" id="loadBetaProfileButton" type="button">Mein Beta-Profil neu laden</button>
+  </div>
 </section>
 
 <section class="glass-card section-card" id="manual">
@@ -960,6 +979,59 @@ const KEYS = {
   applications: "sjc_applications_v2"
 };
 
+const MARIT_BETA_PROFILE = {
+  fields: {
+    fullName: "Marit Silva Gebhardt",
+    currentTitle: "AI-Powered Marketing | Content Strategy | Marketing Automation | Customer Success",
+    location: "Wilsdruff, Germany",
+    linkedinUrl: "https://www.linkedin.com/in/marit-silva-gebhardt",
+    professionalSummary: "International erfahrene kaufmännische und kundenorientierte Fachkraft mit Stärken in Organisation, Customer Success, CRM, Projektkoordination, Content-Erstellung, digitalen Workflows und strukturierter Umsetzung. Mehrjährige internationale B2B-Erfahrung, Teamkoordination, Trainings, Kampagnen- und Eventorganisation sowie aktuelle Spezialisierung in datengetriebenem Digital Marketing, KI, Automatisierung, Analytics und Remote-Zusammenarbeit.",
+    privateExperienceText: "Eigene digitale Praxis: Smart Job Compass App/Prototyp, HTML-Seiten, Google-Ads-Playbook, KI-gestützte Content-Erstellung, TikTok-Shop, UGC sowie Blog- und Affiliate-Projekte. Verschiedene Ideen wurden selbstständig geplant, visuell umgesetzt und als praktische Arbeitsproben aufgebaut.",
+    certificateText: "Aktuell: Data-Driven Digital Marketing, AI & E-Commerce Specialization. Payroll Specialist Training (IHK), Project Management & Leadership Training, Office Management Specialist sowie zertifizierte Weiterbildung zur Entspannungstrainerin.",
+    portfolioUrl: "",
+    githubUrl: "",
+    socialUrl: "",
+    mediaUrl: "",
+    portfolioNotes: "Relevante Arbeitsproben: Smart Job Compass, HTML-Seiten, Google Ads Playbook, Social-Media- und Video-Content, UGC, TikTok-Shop sowie KI-gestützte Marketing- und Automatisierungskonzepte.",
+    otherCareerField: "Kaufmännische digitale Schnittstellenrolle / Business Support",
+    otherTasks: "Internationale Kundenbetreuung, Produktschulungen, Event- und Messeorganisation, Freelancer-Koordination",
+    otherSkills: "Outlook, Perplexity, internationale B2B-Kommunikation, Onboarding, Umsatzkoordination, grundlegende Datenpflege und Systemverwaltung",
+    otherDesiredField: "Digitale Problemlösung und praktische KI-Unterstützung für kleine Unternehmen",
+    otherExclusions: "Kein reiner Vertrieb, keine Provisionsrolle und keine dauerhafte Telefonarbeit.",
+    salaryWish: "",
+    salaryType: ""
+  },
+  chips: {
+    privateProjects: ["Eigener Blog","Website","HTML-Seite","App / Prototyp","TikTok","TikTok Shop","Affiliate-Marketing","UGC","KI-Projekt","Automatisierung"],
+    certificates: ["IHK","Bootcamp / Weiterbildung"],
+    careerFields: ["Customer Support & Customer Success","Assistenz, Backoffice & Virtual Assistance","Content, Social Media & Copywriting","Digital Marketing","E-Mail-Marketing & CRM","Performance Marketing","Projektkoordination & Operations","Datenanalyse & Reporting","Low-Code, KI & Automatisierung","E-Commerce","Design, Video & UGC"],
+    tasks: ["Schreiben","Organisieren","Kunden helfen","Content erstellen","Videos erstellen","Präsentationen","Recherche","Daten analysieren","Prozesse verbessern","KI nutzen","Automatisieren","Projekte koordinieren","Social Media betreuen","Kampagnen planen","Reports erstellen"],
+    tools: ["MS Office","Excel","Google Workspace","Canva","CapCut","ChatGPT","Gemini","NotebookLM","CRM","E-Mail-Marketing","Performance-Marketing","Affiliate-Marketing","SEO","Google Ads","Meta Ads","Google Analytics","Looker Studio","Notion","Trello / Asana","HTML","CSS","n8n","Make","Zapier"],
+    skillLevel: ["Bereits praktisch angewendet"],
+    desiredFields: ["Customer Success","Content & Social Media","Digital Marketing","CRM & E-Mail-Marketing","Performance Marketing","Projektkoordination & Operations","AI Training & Prompting","Datenanalyse","KI & Automatisierung","E-Commerce & Affiliate","Design, Video & UGC"],
+    workModel: ["100 % Remote","Homeoffice","Flexible Arbeitszeiten","Europäische Zeitzone"],
+    hours: ["20–25 Stunden"],
+    employment: ["Festanstellung","Unbefristet"],
+    companySize: ["1–10 Mitarbeitende","11–50 Mitarbeitende","51–200 Mitarbeitende"],
+    experienceLevel: ["Junior","Mid-Level","Quereinstieg"],
+    exclusions: ["Kaltakquise","Callcenter","Schichtarbeit","Nur Provision","Führungsverantwortung","100 % Telefon","Vor-Ort-Pflicht"],
+    salaryType: ["Brutto"]
+  },
+  experiences: [
+    {title:"Career Transition & AI Upskilling",company:"Self-directed / aktuelle Weiterbildung",period:"Feb 2025 – heute"},
+    {title:"Accounting Assistant",company:"Autohaus, Wilsdruff",period:"Aug 2024 – Jan 2025"},
+    {title:"Area Sales Manager",company:"Cartier · Eastern Europe (9 Länder)",period:"Jun 2013 – Sep 2018"},
+    {title:"Art Gallery Associate",company:"Park West, USA",period:"Apr 2012 – Nov 2012"},
+    {title:"Guest Service Associate",company:"Carnival Cruise Line, USA",period:"Jun 2011 – Feb 2012"},
+    {title:"Team Lead",company:"ADAC Dresden",period:"Apr 2010 – Mai 2011"},
+    {title:"Sales Executive (CRM)",company:"ServiceSource, Ireland",period:"Mai 2007 – Jan 2009"}
+  ],
+  cvFileName: "CV 2026 English – als Beta-Testprofil hinterlegt",
+  betaProfile: true,
+  betaProfileVersion: "2026-08-03"
+};
+
+
 const VIEW_TITLES = {
   dashboard:"Dashboard",
   profile:"Mein Profil",
@@ -1019,6 +1091,34 @@ const readJSON = (key, fallback) => {
 const writeJSON = (key, value) => localStorage.setItem(key, JSON.stringify(value));
 const profile = () => readJSON(KEYS.profile, {fields:{}, chips:{}, experiences:[], cvFileName:""});
 
+function cloneBetaProfile(){
+  return JSON.parse(JSON.stringify(MARIT_BETA_PROFILE));
+}
+
+function ensureBetaProfile(){
+  const existing = readJSON(KEYS.profile, null);
+  const meaningful = Boolean(
+    existing && (
+      existing.fields?.fullName ||
+      existing.cvFileName ||
+      (existing.experiences && existing.experiences.length) ||
+      Object.values(existing.chips || {}).some(values => Array.isArray(values) && values.length)
+    )
+  );
+  if(!meaningful) writeJSON(KEYS.profile, cloneBetaProfile());
+}
+
+function reloadBetaProfile(){
+  const confirmed = confirm("Dein aktuelles Profil wird durch das hinterlegte Beta-Testprofil ersetzt. Gespeicherte Jobs bleiben erhalten. Fortfahren?");
+  if(!confirmed) return;
+  writeJSON(KEYS.profile, cloneBetaProfile());
+  localStorage.removeItem(KEYS.analysis);
+  localStorage.removeItem(KEYS.currentJob);
+  history.replaceState(null,"","#profile");
+  location.reload();
+}
+
+
 function initMenu(){
   const toggle = document.getElementById("menuToggle");
   const sidebar = document.getElementById("sidebar");
@@ -1056,6 +1156,8 @@ function restoreProfileFields(){
   });
   const status = document.getElementById("cvFileStatus");
   if(status && data.cvFileName) status.textContent = `Gespeicherte Datei: ${data.cvFileName}`;
+  const betaStatus = document.getElementById("betaProfileStatus");
+  if(betaStatus && data.betaProfile) betaStatus.textContent = "Beta-Testprofil aktiv: Lebenslauf, Stationen, Skills, Weiterbildungen, private Projekte und Wünsche sind vorausgefüllt.";
 }
 
 function initChips(){
@@ -1461,7 +1563,8 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(focusId) setTimeout(()=>document.getElementById(focusId)?.scrollIntoView({behavior:"smooth"}),100);
   }));
   window.addEventListener("hashchange",()=>showView(location.hash.replace("#","")||"dashboard",false));
-  initMenu(); initChips(); restoreProfileFields(); initCVUpload(); initExperiences(); initAnalyzePage();
+  initMenu(); ensureBetaProfile(); initChips(); restoreProfileFields(); initCVUpload(); initExperiences(); initAnalyzePage();
+  document.getElementById("loadBetaProfileButton")?.addEventListener("click", reloadBetaProfile);
   document.getElementById("saveProfileButton")?.addEventListener("click",()=>{saveExperiences();alert("Profil gespeichert.");});
   document.getElementById("saveSkillsButton")?.addEventListener("click",()=>{saveAllProfileFields();alert("Fähigkeiten gespeichert.");});
   document.getElementById("saveGoalsButton")?.addEventListener("click",()=>{saveAllProfileFields();alert("Wünsche gespeichert.");});
