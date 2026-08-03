@@ -1,16 +1,13 @@
-# Smart Job Compass – Beta 0.2
+# Smart Job Compass – Beta 0.3
 
-Erster klickbarer Prototyp für einen Remote-Job-Bewerbungsassistenten.
+Aktualisiert nach der Blueprint Design Language:
 
-## Enthalten
-- Profil über anklickbare Chips
-- Remote-Job-Wünsche
-- Ausschlusskriterien
-- Stellenanzeige einfügen
-- Fähigkeiten-, Wunsch-, Remote- und Arbeitszeit-Fit
-- Warnsignale
-- lokales Archiv
-- erster Bewerbungsentwurf
+- Dark Navy
+- Royal Blue
+- Türkis
+- Gold nur als Akzent
+- moderne Neonlinien und dezenter Glow
+- Glass Cards
+- kein Lila
 
-## Wichtig
-Diese Beta verwendet noch keine echte KI und liest Lebensläufe noch nicht automatisch aus. Die Daten werden nur lokal im Browser gespeichert.
+Die Funktionalität bleibt wie in Beta 0.2. Die Analyse ist weiterhin regelbasiert und noch nicht mit einer echten KI-API verbunden.
