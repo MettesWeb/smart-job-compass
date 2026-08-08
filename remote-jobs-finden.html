@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remote Jobs finden: So findest du Arbeit von überall | Smart Remote Life</title>
+<meta name="description" content="Remote Jobs finden: Was Remote Work besonders macht, welche Jobs sich eignen, wo du seriöse Remote-Stellen findest und wie du deine Chancen bei der Bewerbung erhöhst.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Was ist ein Remote Job?","acceptedAnswer":{"@type":"Answer","text":"Ein Remote Job ist eine Tätigkeit, die ganz oder teilweise außerhalb eines festen Unternehmensstandorts ausgeübt wird. Je nach Arbeitgeber kann die Arbeit von zu Hause, innerhalb eines bestimmten Landes oder vollständig ortsunabhängig möglich sein."}},
+    {"@type":"Question","name":"Welche Remote Jobs gibt es?","acceptedAnswer":{"@type":"Answer","text":"Remote-Stellen gibt es unter anderem in Kundenservice, Assistenz, Marketing, Content, Recruiting, Projektmanagement, Operations, Datenanalyse, Vertrieb und Softwareentwicklung."}},
+    {"@type":"Question","name":"Wo finde ich seriöse Remote Jobs?","acceptedAnswer":{"@type":"Answer","text":"Neben klassischen Jobbörsen können spezialisierte Plattformen wie Remote Rocketship, Remotive und FlexJobs für die Remote-Jobsuche interessant sein."}},
+    {"@type":"Question","name":"Kann ich mit einem Remote Job von überall arbeiten?","acceptedAnswer":{"@type":"Answer","text":"Nicht automatisch. Manche Remote-Jobs sind an ein bestimmtes Land, eine Region, eine Zeitzone oder arbeitsrechtliche Voraussetzungen gebunden. Die jeweilige Stellenanzeige ist entscheidend."}},
+    {"@type":"Question","name":"Wie erhöhe ich meine Chancen auf einen Remote Job?","acceptedAnswer":{"@type":"Answer","text":"Eine gezielte Suche, schnelle Bewerbung auf passende neue Stellen und individuell auf die Ausschreibung abgestimmte Bewerbungsunterlagen können die Chancen verbessern."}}
+  ]
+}
+</script>
+
+<style>
+:root{
+  --ink:#102033;
+  --muted:#5f6d84;
+  --paper:#fffdfb;
+  --white:#ffffff;
+  --lavender:#c9b8ff;
+  --lilac:#e8e0ff;
+  --lilac-light:#f7f3ff;
+  --lilac-dark:#5d5197;
+  --lilac-deep:#7c68b8;
+  --sky:#9ad7ff;
+  --mint:#b9f3df;
+  --pink:#f4b7c9;
+  --gold:#d9aa45;
+  --line:rgba(74,58,116,.12);
+  --shadow:0 18px 50px rgba(77,60,121,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  line-height:1.72;
+  background:
+    linear-gradient(rgba(120,100,183,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(120,100,183,.07) 1px,transparent 1px),
+    radial-gradient(circle at 0 0, rgba(201,184,255,.42), transparent 31%),
+    radial-gradient(circle at 92% 4%, rgba(154,215,255,.30), transparent 28%),
+    radial-gradient(circle at 50% 44%, rgba(244,183,201,.14), transparent 30%),
+    linear-gradient(180deg,#faf8ff 0,#fffdfb 380px,#ffffff 100%);
+  background-size:36px 36px,36px 36px,auto,auto,auto,auto;
+}
+a{color:var(--lilac-dark)}
+a:focus-visible,.cta-btn:focus-visible,.home-btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.topbar{width:min(1760px,calc(100% - 32px));margin:0 auto;padding:18px 0 0}
+.home-btn{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:999px;background:rgba(255,255,255,.84);border:1px solid var(--line);box-shadow:0 10px 24px rgba(76,58,119,.08);text-decoration:none;font-size:1.12rem}
+
+.hero{
+  width:min(980px,calc(100% - 32px));
+  margin:14px auto 34px;
+  min-height:420px;
+  border-radius:34px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid rgba(255,255,255,.96);
+  box-shadow:0 28px 70px rgba(74,55,115,.13);
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.97) 38%,rgba(255,255,255,.88) 51%,rgba(255,255,255,.36) 66%,rgba(255,255,255,.08) 82%),
+    linear-gradient(0deg,rgba(248,245,255,.16),rgba(248,245,255,.16)),
+    url('remote-jobs-hero.png');
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:cover;
+}
+.hero-inner{position:relative;z-index:1;min-height:420px;display:flex;align-items:center}
+.hero-copy{padding:46px 42px 42px;max-width:58%}
+h1{margin:0;font-size:clamp(2.3rem,5vw,4.2rem);line-height:.98;letter-spacing:-.058em}
+.hero-copy p{margin:18px 0 0;max-width:560px;color:#4a556b;font-size:1.05rem}
+
+.desktop-layout{width:min(1760px,calc(100% - 28px));margin:0 auto;display:grid;grid-template-columns:minmax(220px,300px) minmax(0,980px) minmax(220px,300px);gap:28px;align-items:start}
+.desktop-rail{display:block;position:sticky;top:18px;height:calc(100vh - 36px);min-height:680px;max-height:820px}
+.desktop-rail .rail-photo{position:relative;width:100%;height:100%;overflow:hidden;border-radius:32px;border:1px solid rgba(121,101,185,.12);box-shadow:0 24px 58px rgba(78,62,120,.13);background:#f7f3ff}
+.desktop-rail img{width:100%;height:100%;object-fit:cover;display:block}
+.desktop-rail .rail-wash{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.04),transparent 52%,rgba(255,255,255,.12));pointer-events:none}
+
+.content-shell-v6{min-width:0}
+.article{min-width:0}
+.article-v6>p,.article-v6>h2{max-width:850px;margin-left:auto;margin-right:auto}
+.article-v6>h2{margin-top:42px}
+.intro-card,.card,.faq-card{background:rgba(255,255,255,.95);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);padding:28px;margin-bottom:24px}
+.intro-card{background:linear-gradient(145deg,rgba(247,243,255,.98),rgba(255,255,255,.96))}
+h2{margin:38px 0 14px;font-size:clamp(1.65rem,3vw,2.25rem);line-height:1.15;letter-spacing:-.035em}
+h3{margin:24px 0 10px;font-size:1.23rem}
+p{margin:0 0 16px}.muted{color:var(--muted)}
+
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.benefit{padding:19px;border-radius:21px;background:linear-gradient(145deg,#f0eaff,#fff);border:1px solid rgba(121,101,185,.10)}
+.benefit b{display:block;color:var(--lilac-dark);margin-bottom:6px}.benefit span{font-size:.92rem;color:var(--muted)}
+
+.jobs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.job-chip{padding:14px 16px;border-radius:18px;background:#faf8ff;border:1px solid rgba(121,101,185,.10);font-weight:760;color:#354057}
+
+.recommended-wrap{position:relative;overflow:hidden;margin:30px 0;padding:24px;border-radius:28px;background:linear-gradient(145deg,rgba(248,245,255,.95),rgba(255,255,255,.96));border:1px solid var(--line);box-shadow:var(--shadow)}
+.recommended-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.recommended-kicker{font-size:.92rem;font-weight:900;color:var(--lilac-dark);letter-spacing:.01em}
+.recommended-intro{color:var(--muted);margin-bottom:18px}
+.ad-ribbon{position:absolute;top:22px;right:-36px;width:132px;padding:4px 0;text-align:center;transform:rotate(35deg);background:rgba(99,86,128,.08);color:#7d7788;border-top:1px solid rgba(99,86,128,.06);border-bottom:1px solid rgba(99,86,128,.06);font-size:.62rem;font-weight:760;letter-spacing:.05em;text-transform:uppercase;z-index:3}
+.platforms{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0 30px}
+.platform{position:relative;overflow:hidden;padding:25px;border-radius:27px;background:rgba(255,255,255,.96);border:1px solid var(--line);box-shadow:var(--shadow)}
+.platform::after{content:"";position:absolute;right:-45px;top:-45px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(201,184,255,.30),transparent 68%)}
+.platform.remotive{background:radial-gradient(circle at 93% 7%,rgba(154,215,255,.20),transparent 30%),rgba(255,255,255,.96)}
+.platform h3{font-size:1.55rem;margin:0 0 9px;letter-spacing:-.03em}.platform p{color:#59657a}.platform ul{padding-left:20px;color:#46536a}
+.cta-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:14px 20px;border-radius:999px;color:#fff;text-decoration:none;font-weight:900;background:linear-gradient(135deg,var(--lilac-dark),#8f77d4 55%,#7ab8e8);box-shadow:0 14px 34px rgba(92,72,145,.20);transition:.18s ease}
+.cta-btn:hover{transform:translateY(-1px)}
+.secondary-lilac{background:linear-gradient(135deg,#7762b7,#9a83dc 58%,#9ad7ff)}
+.flexjobs-card{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:16px;padding:18px 20px;border-radius:21px;background:rgba(255,255,255,.78);border:1px solid rgba(121,101,185,.10)}
+.flexjobs-card h3{margin:4px 0 5px;font-size:1.2rem}.flexjobs-card p{margin:0;font-size:.92rem;color:var(--muted)}.flex-copy{max-width:680px}.small-btn{min-height:44px;padding:11px 17px;white-space:nowrap;font-size:.88rem}
+.ad-note{margin:13px 2px 0;color:#9599a4;font-size:.7rem}
+
+.checklist{list-style:none;padding:0;margin:0}
+.checklist li{position:relative;padding:11px 0 11px 31px;border-bottom:1px solid rgba(61,46,101,.08)}
+.checklist li:last-child{border-bottom:0}
+.checklist li::before{content:"✓";position:absolute;left:0;top:10px;width:21px;height:21px;display:grid;place-items:center;border-radius:50%;color:#fff;background:var(--lilac-deep);font-size:.8rem;font-weight:900}
+
+.media-card{position:relative}
+.ki-badge{
+  position:absolute;
+  right:10px;
+  bottom:8px;
+  display:inline-block;
+  padding:0;
+  min-width:0;
+  height:auto;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  color:rgba(255,255,255,.78);
+  font-size:.60rem;
+  font-weight:700;
+  letter-spacing:.05em;
+  line-height:1;
+  text-shadow:
+    0 1px 2px rgba(16,32,51,.72),
+    0 0 4px rgba(16,32,51,.34);
+  backdrop-filter:none;
+}
+.mood-visual{position:relative;width:100%;height:330px;margin:34px 0 38px;border-radius:30px;overflow:hidden;box-shadow:0 18px 46px rgba(77,60,121,.11);border:1px solid rgba(121,101,185,.10)}
+.mood-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.mood-visual.coast img{object-position:50% 55%}.mood-visual.office img{object-position:50% 48%}
+.mood-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,21,38,.12));pointer-events:none}
+.mood-caption{position:absolute;left:20px;bottom:17px;z-index:2;max-width:72%;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.82);backdrop-filter:blur(8px);color:#334057;font-size:.78rem;font-weight:750}
+
+.compass{position:relative;overflow:hidden;padding:29px;border-radius:28px;background:radial-gradient(circle at 90% 10%,rgba(154,215,255,.34),transparent 28%),linear-gradient(135deg,#ede6ff,#fbf9ff 62%,#fff8ef);border:1px solid rgba(121,101,185,.14);box-shadow:var(--shadow);margin:30px 0}
+.compass h2{margin-top:0}.compass .coming{position:absolute;top:14px;right:-36px;transform:rotate(35deg);display:inline-flex;align-items:center;justify-content:center;width:150px;height:28px;background:linear-gradient(90deg,#f5d66f,#e9b84d);color:#5d4913;font-size:.72rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 10px 22px rgba(212,175,55,.18)}
+
+.faq-card details{padding:16px 0;border-top:1px solid rgba(61,46,101,.10)}
+.faq-card details:first-of-type{border-top:0}.faq-card summary{cursor:pointer;font-weight:850;color:#27334a}.faq-card details p{margin:10px 0 0;color:var(--muted)}
+
+.bottom-links{margin:34px 0 10px;padding:22px;border-radius:25px;background:linear-gradient(145deg,#f4efff,#fff);border:1px solid var(--line)}
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr .76fr;gap:12px}
+.bottom-link{display:flex;flex-direction:column;gap:3px;min-height:82px;justify-content:center;padding:14px 16px;border-radius:18px;text-decoration:none;color:var(--ink);background:#fff;border:1px solid rgba(121,101,185,.12)}
+.bottom-link span{color:var(--muted);font-size:.8rem}.bottom-link.subtle{opacity:.86}
+
+footer{width:min(980px,calc(100% - 32px));margin:44px auto 0;padding:26px 0 40px;text-align:center;color:#7a8190;font-size:.84rem}
+footer a{margin:0 6px}.footer-aff{margin-top:12px;font-size:.74rem;color:#9297a2}
+
+
+@media(min-width:1500px){
+  .hero{
+    width:min(1320px,calc(100% - 64px));
+    min-height:500px;
+    background:
+      linear-gradient(90deg,
+        rgba(255,255,255,.99) 0%,
+        rgba(255,255,255,.98) 34%,
+        rgba(255,255,255,.90) 48%,
+        rgba(255,255,255,.52) 61%,
+        rgba(255,255,255,.12) 77%,
+        rgba(255,255,255,.02) 100%
+      ),
+      linear-gradient(0deg,rgba(248,245,255,.10),rgba(248,245,255,.10)),
+      url('remote-jobs-hero.png');
+    background-repeat:no-repeat;
+    background-position:left center,left center,right center;
+    background-size:100% 100%,100% 100%,auto 100%;
+  }
+  .hero-inner{min-height:500px}
+  .hero-copy{
+    max-width:54%;
+    padding:58px 54px 54px;
+  }
+}
+
+
+.remotive-brand{
+  display:flex;
+  align-items:center;
+  min-height:48px;
+  margin:0 0 14px;
+}
+.remotive-brand img{
+  display:block;
+  width:min(220px,72%);
+  height:auto;
+  object-fit:contain;
+}
+.bottom-link.brand-link{
+  flex-direction:row;
+  align-items:center;
+  justify-content:flex-start;
+  gap:10px;
+}
+.bottom-link.brand-link img{
+  width:36px;
+  height:36px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+.bottom-link.brand-link .brand-copy{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+
+@media(min-width:1200px){
+  .article-v6 .card,.article-v6 .intro-card,.article-v6 .faq-card{border-radius:24px;padding:30px 34px}
+  .recommended-wrap{padding:30px 32px}
+}
+@media(max-width:1279px){
+  .desktop-layout{width:min(980px,calc(100% - 32px));grid-template-columns:1fr}
+  .desktop-rail{display:none}
+}
+@media(max-width:900px){
+  .platforms,.benefit-grid,.bottom-grid{grid-template-columns:1fr}
+  .flexjobs-card{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:720px){
+  .hero{min-height:360px;background:linear-gradient(180deg,rgba(255,255,255,.94) 0%,rgba(255,255,255,.88) 58%,rgba(255,255,255,.48) 100%),url('remote-jobs-hero.png');background-position:center center;background-size:cover}
+  .hero-inner{min-height:360px;align-items:flex-end}
+  .hero-copy{padding:28px 22px 26px;max-width:100%}
+  h1{font-size:clamp(2rem,10vw,3rem)}
+  .mood-visual{height:215px;margin:26px 0 30px;border-radius:23px}
+  .mood-caption{left:12px;bottom:11px;max-width:88%;font-size:.7rem;padding:6px 9px}
+  .ad-ribbon{top:13px;right:-38px;width:122px;font-size:.59rem}
+  .compass .coming{right:-44px;top:10px;width:142px;font-size:.66rem}
+}
+@media(max-width:620px){
+  .intro-card,.card,.faq-card,.platform,.compass{padding:21px}
+  .jobs-grid{grid-template-columns:1fr}
+}
+
+/* ===== FINAL SMART REMOTE LIFE / REMOTE JOBS ===== */
+
+/* Screen-reader helper / accessibility */
+.skip-link{
+  position:fixed;
+  left:12px;
+  top:-60px;
+  z-index:1000;
+  padding:10px 14px;
+  border-radius:10px;
+  background:#102033;
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+}
+.skip-link:focus{top:12px}
+
+/* Header AI mark: visible but intentionally quiet */
+.hero-ai-mark{
+  position:absolute;
+  right:14px;
+  bottom:11px;
+  z-index:4;
+  color:rgba(255,255,255,.76);
+  font-size:.58rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-shadow:0 1px 3px rgba(16,32,51,.58);
+}
+
+/* Rocketship branding inside recommendation card */
+.rocketship-brand{
+  display:flex;
+  align-items:center;
+  min-height:54px;
+  margin:0 0 12px;
+}
+.rocketship-brand img{
+  width:min(260px,78%);
+  max-height:70px;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
+}
+
+/* Remotive official branding */
+.remotive-brand{
+  display:flex;
+  align-items:center;
+  min-height:54px;
+  margin:0 0 12px;
+}
+.remotive-brand img{
+  width:min(230px,74%);
+  max-height:65px;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
+}
+
+/* Desktop affiliate rails.
+   Hidden by default: only the truly wide desktop view gets these banners. */
+.desktop-rail{display:none}
+
+@media(min-width:1500px){
+  .desktop-layout{
+    width:min(1740px,calc(100% - 32px));
+    grid-template-columns:minmax(220px,280px) minmax(0,980px) minmax(220px,280px);
+    gap:28px;
+  }
+  .desktop-rail{
+    display:block;
+    position:sticky;
+    top:18px;
+    height:620px;
+    min-height:0;
+    max-height:none;
+  }
+  .desktop-rail .rail-photo{
+    width:100%;
+    height:620px;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 24px 58px rgba(78,62,120,.13);
+    border:1px solid rgba(121,101,185,.12);
+  }
+
+  /* Rocketship left: custom light banner, fully clickable */
+  .rocket-ad{
+    display:block;
+    width:100%;
+    height:100%;
+    position:relative;
+    text-decoration:none;
+    background:linear-gradient(180deg,#fffaff,#f5ecff);
+  }
+  .rocket-ad img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+    display:block;
+  }
+
+  /* Remotive right: official assets, colors based on Remotive */
+  .remotive-ad{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+    padding:24px 19px 20px;
+    text-decoration:none;
+    color:#5b2d23;
+    background:
+      radial-gradient(circle at 88% 9%,rgba(255,166,55,.18),transparent 25%),
+      linear-gradient(180deg,#fff8ec 0%,#fff4e5 62%,#ffebcc 100%);
+  }
+  .remotive-ad::before{
+    content:"";
+    position:absolute;
+    inset:auto -55px -58px auto;
+    width:190px;height:190px;
+    border-radius:50%;
+    background:rgba(255,133,20,.09);
+  }
+  .remotive-ad-logo{
+    width:190px;
+    max-width:86%;
+    height:auto;
+    object-fit:contain;
+    align-self:flex-start;
+    margin-bottom:26px;
+  }
+  .remotive-ad h3{
+    position:relative;
+    z-index:2;
+    margin:0 0 11px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:2rem;
+    line-height:1.03;
+    letter-spacing:-.035em;
+    color:#5b2d23;
+  }
+  .remotive-ad p{
+    position:relative;
+    z-index:2;
+    margin:0 0 14px;
+    color:#70483c;
+    font-size:.93rem;
+    line-height:1.45;
+  }
+  .remotive-benefits{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+    margin:4px 0 12px;
+  }
+  .remotive-benefits span{
+    padding:6px 9px;
+    border-radius:999px;
+    background:rgba(255,255,255,.62);
+    border:1px solid rgba(91,45,35,.11);
+    font-size:.72rem;
+    font-weight:800;
+    color:#5b2d23;
+  }
+  .remotive-mascot{
+    position:relative;
+    z-index:1;
+    width:92%;
+    max-height:265px;
+    margin:auto auto 2px;
+    object-fit:contain;
+  }
+  .remotive-ad-cta{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:46px;
+    border-radius:14px;
+    background:#ff8213;
+    color:#fff;
+    font-weight:900;
+    font-size:.9rem;
+    box-shadow:0 10px 22px rgba(255,130,19,.18);
+  }
+
+  .rail-ad-label{
+    position:absolute;
+    top:8px;
+    right:10px;
+    z-index:8;
+    font-size:.58rem;
+    font-weight:700;
+    letter-spacing:.05em;
+    color:rgba(70,60,78,.58);
+  }
+  .rocket-ad .rail-ad-label{
+    color:rgba(72,54,101,.58);
+  }
+  .rail-ki{
+    position:absolute;
+    right:10px;
+    bottom:8px;
+    z-index:9;
+    font-size:.56rem;
+    font-weight:700;
+    color:rgba(255,255,255,.72);
+    text-shadow:0 1px 3px rgba(40,25,60,.60);
+  }
+
+  /* Large desktop header: preserve the full important right side better */
+  .hero{
+    width:min(1320px,calc(100% - 64px));
+    min-height:500px;
+    background:
+      linear-gradient(90deg,
+        rgba(255,255,255,.99) 0%,
+        rgba(255,255,255,.98) 33%,
+        rgba(255,255,255,.91) 46%,
+        rgba(255,255,255,.60) 59%,
+        rgba(255,255,255,.16) 75%,
+        rgba(255,255,255,.02) 100%
+      ),
+      url('remote-jobs-hero.png');
+    background-repeat:no-repeat;
+    background-position:left center,right center;
+    background-size:100% 100%,auto 100%;
+  }
+  .hero-inner{min-height:500px}
+  .hero-copy{max-width:54%;padding:58px 54px 54px}
+}
+
+/* MacBook / normal desktop: no side ads, current reading width stays intact */
+@media(min-width:1280px) and (max-width:1499px){
+  .desktop-layout{
+    width:min(980px,calc(100% - 32px));
+    display:block;
+  }
+}
+
+/* Mobile: keep the current block-first reading experience */
+@media(max-width:720px){
+  .rocketship-brand img,
+  .remotive-brand img{
+    width:min(220px,82%);
+  }
+}
+
+
+/* ===== FINAL FEINSCHLIFF v2 ===== */
+.rocketship-brand,
+.remotive-brand{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  margin:0 0 14px;
+}
+.rocketship-brand img,
+.remotive-brand img{
+  width:230px;
+  max-width:82%;
+  height:64px;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
+}
+
+/* Rocketship: the approved banner itself is the visual.
+   No additional card/frame around it. */
+@media(min-width:1500px){
+  .desktop-layout{
+    width:min(1740px,calc(100% - 32px));
+    grid-template-columns:minmax(220px,240px) minmax(0,980px) minmax(220px,240px);
+    gap:28px;
+  }
+
+  .desktop-rail{
+    height:880px;
+    min-height:0;
+    max-height:none;
+  }
+  .desktop-rail .rail-photo{
+    height:880px;
+  }
+
+  .desktop-rail.left .rail-photo{
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+    background:transparent;
+    overflow:visible;
+  }
+  .rocket-ad{
+    background:transparent;
+    overflow:visible;
+  }
+  .rocket-ad img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:top center;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+    background:transparent;
+  }
+
+  /* Remotive stays visually unchanged; only the rail has enough height
+     so the CTA is not clipped. */
+  .desktop-rail.right .rail-photo{
+    height:880px;
+  }
+  .remotive-ad{
+    min-height:880px;
+  }
+  .remotive-mascot{
+    max-height:390px;
+  }
+}
+
+/* The generated AI mark remains visible, but intentionally quiet. */
+.rail-ki{
+  right:6px;
+  bottom:4px;
+  font-size:.52rem;
+  color:rgba(70,55,90,.48);
+  text-shadow:none;
+}
+
+
+/* ===== LETZTE KORREKTUREN v3 ===== */
+.rocketship-brand,
+.remotive-brand{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  margin:0 0 16px;
+}
+.rocketship-brand img,
+.remotive-brand img{
+  width:250px;
+  max-width:88%;
+  height:auto;
+  max-height:76px;
+  object-fit:contain;
+  object-position:left center;
+  display:block;
+}
+
+.side-banner-image{
+  position:relative;
+  display:block;
+  width:100%;
+  height:auto;
+  background:transparent;
+  text-decoration:none;
+}
+.side-banner-image img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  background:transparent;
+}
+.side-werbung{
+  position:absolute;
+  top:8px;
+  right:10px;
+  z-index:4;
+  color:rgba(95,79,69,.58);
+  font-size:.58rem;
+  font-weight:700;
+  letter-spacing:.04em;
+}
+.side-ki{
+  position:absolute;
+  right:7px;
+  bottom:5px;
+  z-index:4;
+  color:rgba(80,63,55,.45);
+  font-size:.50rem;
+  font-weight:700;
+}
+
+@media(min-width:1500px){
+  .desktop-layout{
+    width:min(1740px,calc(100% - 32px));
+    grid-template-columns:minmax(220px,240px) minmax(0,980px) minmax(220px,240px);
+    gap:28px;
+  }
+  .desktop-rail{
+    display:block;
+    position:sticky;
+    top:18px;
+    height:auto;
+    min-height:0;
+    max-height:none;
+    align-self:start;
+  }
+  .desktop-rail .rail-photo{
+    height:auto;
+    min-height:0;
+    max-height:none;
+    overflow:visible;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+    background:transparent;
+  }
+  .rocket-ad{
+    width:100%;
+    height:auto;
+    background:transparent;
+  }
+  .rocket-ad img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    object-position:top center;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+  }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+<div class="topbar"><a class="home-btn" href="index.html" aria-label="Zur Smart Remote Life Startseite">⌂</a></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <h1>Remote Jobs finden: Dein Weg zu mehr Freiheit im Arbeitsalltag</h1>
+      <p>Kein täglicher Arbeitsweg, mehr Flexibilität und die Möglichkeit, Arbeit stärker an das eigene Leben anzupassen: Remote Work kann weit mehr sein als einfach nur „Homeoffice“. Hier erfährst du, welche Remote Jobs es gibt, wo du gute Stellen findest und wie du deine Chancen bei der Bewerbung erhöhst.</p>
+    </div>
+  </div>
+  <span class="hero-ai-mark" aria-label="KI-generiertes Hintergrundbild">KI</span>
+</header>
+
+<main class="desktop-layout" id="main-content">
+  <aside class="desktop-rail left" aria-label="Werbung: Remote Rocketship">
+    <div class="rail-photo">
+      <a class="rocket-ad" href="https://tolt.link/smartremotelife" target="_blank" rel="sponsored nofollow noopener" aria-label="Remote Rocketship – Remote Jobs entdecken">
+        <img src="rocketship-desktop-banner-final.png" alt="Remote Rocketship – Remote Jobs entdecken">
+        <span class="rail-ki" aria-label="KI-generierte Gestaltung">KI</span>
+      </a>
+    </div>
+  </aside>
+
+  <div class="content-shell-v6">
+    <article class="article article-v6">
+
+      <section class="intro-card">
+        <h2 style="margin-top:0">Warum Remote Work für so viele Menschen attraktiv ist</h2>
+        <p>Arbeit muss heute nicht mehr automatisch bedeuten, jeden Morgen ins Büro zu fahren. Viele Tätigkeiten lassen sich digital erledigen – und genau das eröffnet neue Möglichkeiten für Menschen, die flexibler arbeiten, ihren Wohnort freier wählen oder Beruf und Privatleben besser miteinander verbinden möchten.</p>
+        <div class="benefit-grid">
+          <div class="benefit"><b>🕒 Mehr Flexibilität</b><span>Weniger Pendelzeit und oft mehr Freiheit bei der Organisation des Arbeitstages.</span></div>
+          <div class="benefit"><b>🌍 Mehr Ortsfreiheit</b><span>Je nach Vertrag arbeitest du von zu Hause, innerhalb eines Landes oder sogar international.</span></div>
+          <div class="benefit"><b>💻 Digitale Karriere</b><span>Viele klassische Bürojobs und neue digitale Tätigkeiten funktionieren heute remote.</span></div>
+        </div>
+      </section>
+
+      <div class="mood-visual office media-card">
+        <img src="mood-remote-work.png" alt="Remote arbeiten aus dem Camper mit Laptop und Bergblick">
+        <span class="ki-badge" aria-label="KI-generiertes Bild">KI</span>
+        <span class="mood-caption">Remote Work passt sich deinem Lebensstil an – nicht umgekehrt.</span>
+      </div>
+
+      <h2>Was ist ein Remote Job?</h2>
+      <p>Ein Remote Job ist eine Tätigkeit, bei der du nicht dauerhaft an einen festen Unternehmensstandort gebunden bist. Das kann vollständige Remote-Arbeit sein, ein Homeoffice-Modell oder eine Stelle, bei der du nur gelegentlich vor Ort sein musst.</p>
+      <p>Wichtig: <strong>„Remote“ bedeutet nicht automatisch „von überall auf der Welt“.</strong> Manche Arbeitgeber erlauben Remote Work nur innerhalb Deutschlands, innerhalb der EU oder in bestimmten Zeitzonen. Deshalb lohnt sich ein genauer Blick auf die jeweilige Stellenanzeige.</p>
+
+      <h2>Welche Vorteile hat ein Remote Job?</h2>
+      <section class="card">
+        <ul class="checklist">
+          <li>Du sparst tägliche Fahrzeiten und Pendelkosten.</li>
+          <li>Du kannst deinen Wohnort flexibler wählen.</li>
+          <li>Du bekommst Zugang zu Arbeitgebern außerhalb deiner direkten Umgebung.</li>
+          <li>Digitale Zusammenarbeit wird Teil deines normalen Arbeitsalltags.</li>
+          <li>Je nach Unternehmen kann Remote Work Reisen oder einen längeren Aufenthalt an einem anderen Ort erleichtern.</li>
+        </ul>
+      </section>
+
+      <h2>Welche Remote Jobs gibt es?</h2>
+      <p>Remote Work ist längst nicht mehr nur etwas für Programmierer. Viele Unternehmen suchen Mitarbeiter für digitale Tätigkeiten, die sich problemlos außerhalb eines klassischen Büros erledigen lassen.</p>
+      <div class="jobs-grid">
+        <div class="job-chip">💬 Customer Support</div>
+        <div class="job-chip">📋 Virtuelle Assistenz & Backoffice</div>
+        <div class="job-chip">📱 Social Media & Content</div>
+        <div class="job-chip">📈 Online Marketing</div>
+        <div class="job-chip">🧩 Projektmanagement & Operations</div>
+        <div class="job-chip">👥 Recruiting & HR</div>
+        <div class="job-chip">📊 Datenanalyse</div>
+        <div class="job-chip">💻 Software & IT</div>
+      </div>
+
+      <h2>Kann ich auch ohne IT-Studium remote arbeiten?</h2>
+      <p>Ja. Entscheidend ist nicht automatisch ein technisches Studium, sondern ob deine Tätigkeit digital erledigt werden kann und welche Anforderungen der Arbeitgeber stellt. Gerade Support, Assistenz, Content, Marketing, Recruiting, Operations und verschiedene administrative Rollen können für Bewerber interessant sein, die keine klassische Entwicklerkarriere anstreben.</p>
+
+      <h2>Wo finde ich seriöse Remote Jobs?</h2>
+      <p>Du kannst natürlich LinkedIn, Indeed und klassische Jobbörsen nutzen. Zusätzlich würde ich spezialisierte Remote-Plattformen in die Suche aufnehmen. Gerade Remote Rocketship und Remotive eignen sich gut als zusätzliche Hauptquellen; FlexJobs kann die Suche mit geprüften Remote- und flexiblen Stellen ergänzen.</p>
+
+      <section class="recommended-wrap">
+        <span class="ad-ribbon">Werbung</span>
+        <div class="recommended-head">
+          <span class="recommended-kicker">Empfohlene Webseiten</span>
+        </div>
+        <p class="recommended-intro">Für eine aktive Remote-Jobsuche würde ich nicht nur auf einer einzigen Plattform suchen. Diese beiden Seiten sind besonders interessant, weil sie sich stark auf Remote-Arbeit konzentrieren und dir zusätzliche Stellen zeigen können.</p>
+
+        <div class="platforms">
+          <section class="platform">
+            <h3 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Remote Rocketship</h3>
+            <div class="rocketship-brand">
+              <img src="rocketship-logo-card-final.png" alt="Remote Rocketship">
+            </div>
+            <p>Remote Rocketship konzentriert sich auf Remote-Stellen und bündelt Jobs aus vielen Unternehmensquellen. Besonders praktisch sind die Filter nach Jobtitel, Land, Erfahrung und weiteren Kriterien.</p>
+            <ul>
+              <li>eigene Suche für Deutschland</li>
+              <li>viele Filter für gezielte Jobsuche</li>
+              <li>Job-Alerts für neue Stellen</li>
+              <li>für viele verschiedene Berufsfelder interessant</li>
+            </ul>
+            <p><strong>Meine Empfehlung:</strong> Wenn du aktiv einen Remote Job suchst, würde ich Remote Rocketship definitiv zusätzlich zu klassischen Jobbörsen nutzen.</p>
+            <a class="cta-btn" href="https://tolt.link/smartremotelife" target="_blank" rel="sponsored nofollow noopener">Remote Jobs entdecken →</a>
+          </section>
+
+          <section class="platform remotive">
+            <h3 class="visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Remotive</h3>
+            <div class="remotive-brand">
+              <img src="remotive-logo-large.png" alt="Remotive">
+            </div>
+            <p>Remotive ist eine weitere spezialisierte Plattform für vollständig remote ausgeschriebene Jobs. Die Suche lässt sich nach Kategorie, Standort, Erfahrungslevel, Beschäftigungsart und weiteren Kriterien filtern.</p>
+            <ul>
+              <li>große Auswahl an Remote-Stellen</li>
+              <li>Filter nach Standort und Karrierelevel</li>
+              <li>Jobs aus Marketing, Support, Tech, Operations und mehr</li>
+              <li>gut als zweite Quelle neben Rocketship</li>
+            </ul>
+            <p><strong>Meine Empfehlung:</strong> Nutze Remotive parallel zu Rocketship. Je mehr passende Quellen du gleichzeitig prüfst, desto größer ist deine Chance, eine interessante Stelle früh zu entdecken.</p>
+            <a class="cta-btn secondary-lilac" href="https://remotive.com/join?via=SmartRemoteLife" target="_blank" rel="sponsored nofollow noopener">Remotive ansehen →</a>
+          </section>
+        </div>
+
+        <section class="flexjobs-card">
+          <div class="flex-copy">
+            <h3>FlexJobs</h3>
+            <p>FlexJobs konzentriert sich auf geprüfte Remote-, Homeoffice- und flexible Stellenangebote. Besonders interessant ist die Plattform, wenn du Wert darauf legst, weniger Zeit mit zweifelhaften oder unpassenden Anzeigen zu verlieren.</p>
+          </div>
+          <div class="flex-action">
+            <a class="cta-btn small-btn" href="https://www.flexjobs.com/" target="_blank" rel="noopener">FlexJobs ansehen →</a>
+          </div>
+        </section>
+        <p class="ad-note">Werbung · Einige Links in diesem Bereich können Partnerlinks sein.</p>
+      </section>
+
+      <h2>Ist Remote Rocketship kostenlos?</h2>
+      <p><strong>Teilweise.</strong> Du kannst die Plattform zunächst ansehen und einen begrenzten Teil der Suche nutzen. Für den vollständigen Zugriff gibt es eine bezahlte Mitgliedschaft.</p>
+      <p>Wenn du gerade ernsthaft nach einem Remote Job suchst, würde ich persönlich eher den vollständigen Zugang nutzen, weil eine größere Auswahl und mehr Suchmöglichkeiten genau in dieser Phase den größten Nutzen haben. Bezahlte Abos verlängern sich laut Anbieter automatisch, bis du kündigst; die Kündigung kann über den Account bzw. Support erfolgen. Remote Rocketship nennt außerdem aktuell eine 14-Tage-Geld-zurück-Garantie für individuelle Paid-Mitgliedschaften.</p>
+
+      <h2>Kann ich mit einem Remote Job wirklich von überall arbeiten?</h2>
+      <p>Manchmal ja – aber eben nicht bei jeder Stelle. Achte besonders auf Formulierungen wie „Germany Remote“, „EU Remote“, „Worldwide“ oder feste Zeitzonen. Steuern, Arbeitsrecht, Aufenthaltsrecht und die Unternehmensrichtlinien können ebenfalls Einfluss darauf haben, von wo aus du tatsächlich arbeiten darfst.</p>
+
+      <div class="mood-visual coast media-card">
+        <img src="mood-remote-coast.png" alt="Remote arbeiten mit Laptop direkt am türkisblauen Strand">
+        <span class="ki-badge" aria-label="KI-generiertes Bild">KI</span>
+        <span class="mood-caption">Mehr Freiheit bedeutet oft auch: arbeiten, wo du dich wohlfühlst.</span>
+      </div>
+
+      <h2>Wie finde ich schneller einen passenden Remote Job?</h2>
+      <section class="card">
+        <h3>1. Suche nach mehreren Jobtiteln</h3>
+        <p>Ein und dieselbe Tätigkeit kann ganz unterschiedlich bezeichnet werden. Suche nicht nur nach einem Begriff, sondern nach mehreren verwandten Jobtiteln.</p>
+        <h3>2. Nutze spezialisierte Remote-Plattformen</h3>
+        <p>Ergänze große Jobbörsen um Seiten, die sich gezielt auf Remote-Arbeit konzentrieren. Remote Rocketship und Remotive würde ich dabei als zwei Hauptquellen nutzen; FlexJobs kann deine Suche zusätzlich ergänzen.</p>
+        <h3>3. Reagiere auf neue Stellen schnell</h3>
+        <p>Beliebte Remote-Stellen können viele Bewerbungen erhalten. Wenn eine Rolle wirklich gut passt, solltest du nicht unnötig tagelang warten.</p>
+        <h3>4. Filtere konsequent</h3>
+        <p>Arbeitszeit, Land, Sprache, Erfahrungslevel, Vertragsart und Gehalt sollten zu deinem tatsächlichen Leben passen. Mehr Anzeigen sind nicht automatisch besser – passende Anzeigen sind besser.</p>
+      </section>
+
+      <h2>Wie bewerbe ich mich erfolgreich auf einen Remote Job?</h2>
+      <p>Ein Remote-Arbeitgeber möchte nicht nur sehen, was du beruflich kannst. Wichtig sind häufig auch Selbstorganisation, klare Kommunikation, digitale Zusammenarbeit und die Fähigkeit, eigenständig zu arbeiten.</p>
+      <section class="card">
+        <ul class="checklist">
+          <li>Passe deinen Lebenslauf an die konkrete Ausschreibung an.</li>
+          <li>Zeige relevante digitale Tools und Remote-Kompetenzen.</li>
+          <li>Nutze konkrete Beispiele statt allgemeiner Floskeln.</li>
+          <li>Heb Erfahrungen hervor, die genau zur ausgeschriebenen Rolle passen.</li>
+          <li>Prüfe vor dem Absenden, ob alle geforderten Unterlagen enthalten sind.</li>
+        </ul>
+      </section>
+
+      <section class="compass">
+        <span class="coming">Coming soon</span>
+        <h2>Stelle gefunden? Dann kommt der Smart Job Compass ins Spiel.</h2>
+        <p>Ich arbeite gerade an einem eigenen Tool für Remote-Bewerbungen. Der Smart Job Compass soll eine konkrete Stellenanzeige mit deinem Profil abgleichen und daraus anschließend ein individuell auf die Stelle zugeschnittenes Bewerbungsportfolio erstellen.</p>
+        <p><strong>Ziel:</strong> Nicht hundert beliebige Bewerbungen verschicken – sondern schneller erkennen, welche Stelle wirklich passt und die Bewerbung gezielter aufbauen.</p>
+      </section>
+
+      <h2>Wie erkenne ich unseriöse Remote-Job-Angebote?</h2>
+      <section class="card">
+        <ul class="checklist">
+          <li>Prüfe den Arbeitgeber und die offizielle Unternehmenswebsite.</li>
+          <li>Sei vorsichtig, wenn Geld verlangt wird, nur damit du dich bewerben oder anfangen kannst.</li>
+          <li>Überweise niemals spontan Geld für angebliche Arbeitsmittel an unbekannte Personen.</li>
+          <li>Prüfe E-Mail-Domain, Vertrag und Ansprechpartner.</li>
+          <li>Bei ungewöhnlich hohen Versprechen ohne klare Aufgabenbeschreibung: genauer hinschauen.</li>
+        </ul>
+      </section>
+
+      <section class="faq-card">
+        <h2 style="margin-top:0">Häufige Fragen zu Remote Jobs</h2>
+        <details><summary>Was ist der Unterschied zwischen Homeoffice und Remote Work?</summary><p>Homeoffice beschreibt häufig das Arbeiten von zu Hause. Remote Work ist weiter gefasst und kann – abhängig vom Arbeitgeber – auch andere Arbeitsorte einschließen.</p></details>
+        <details><summary>Welche Remote Jobs eignen sich für Quereinsteiger?</summary><p>Das hängt von Erfahrung und Stelle ab. Häufig interessant sind Support, Assistenz, Content, Social Media, administrative Tätigkeiten und bestimmte Operations-Rollen.</p></details>
+        <details><summary>Wo finde ich Remote Jobs in Deutschland?</summary><p>Neben klassischen Plattformen kannst du spezialisierte Remote-Jobbörsen wie Remote Rocketship nutzen. Dort lässt sich gezielt nach in Deutschland verfügbaren Remote-Stellen suchen.</p></details>
+        <details><summary>Kann ich einen Remote Job in Teilzeit finden?</summary><p>Ja. Es gibt sowohl Vollzeit- als auch Teilzeit-, Vertrags- und projektbasierte Remote-Rollen. Welche Modelle verfügbar sind, hängt vom jeweiligen Arbeitgeber ab.</p></details>
+        <details><summary>Kann ich als Deutscher für ein Unternehmen im Ausland remote arbeiten?</summary><p>Grundsätzlich gibt es internationale Remote-Stellen, allerdings müssen Arbeitgeber, Vertragsmodell, Steuer- und Aufenthaltsfragen sowie die erlaubten Arbeitsorte zusammenpassen.</p></details>
+        <details><summary>Welche Plattform sollte ich zuerst ausprobieren?</summary><p>Für eine breite Remote-Jobsuche würde ich Remote Rocketship und Remotive zusätzlich zu klassischen Jobbörsen verwenden. FlexJobs ist eine weitere interessante Ergänzung, wenn du gezielt nach geprüften Remote- und flexiblen Stellen suchst.</p></details>
+      </section>
+
+      <section class="bottom-links">
+        <div class="recommended-head"><span class="recommended-kicker">Direkt zur Jobsuche</span></div>
+        <div class="bottom-grid">
+          <a class="bottom-link" href="https://tolt.link/smartremotelife" target="_blank" rel="sponsored nofollow noopener"><b>🚀 Remote Rocketship</b><span>Remote Jobs entdecken</span></a>
+          <a class="bottom-link brand-link" href="https://remotive.com/join?via=SmartRemoteLife" target="_blank" rel="sponsored nofollow noopener">
+            <img src="remotive-logo-small.png" alt="">
+            <span class="brand-copy"><b>Remotive</b><span>Remote Jobs durchsuchen</span></span>
+          </a>
+          <a class="bottom-link subtle" href="https://www.flexjobs.com/" target="_blank" rel="noopener"><b>💼 FlexJobs</b><span>Flexible Jobs ansehen</span></a>
+        </div>
+        <p class="ad-note">Werbung · Einige Links können Partnerlinks sein.</p>
+      </section>
+    </article>
+  </div>
+
+  <aside class="desktop-rail right" aria-label="Werbung: Remotive">
+    <a class="side-banner-image remotive-side-banner" href="https://remotive.com/join?via=SmartRemoteLife" target="_blank" rel="sponsored nofollow noopener" aria-label="Remotive – Remote Jobs entdecken">
+      <span class="side-werbung">Werbung</span>
+      <img src="remotive-desktop-banner-final.png" alt="Remotive – Remote Jobs weltweit entdecken">
+      <span class="side-ki" aria-label="KI-gestalteter Banner">KI</span>
+    </a>
+  </aside>
+</main>
+
+<footer>
+  <a href="index.html">Startseite</a> ·
+  <a href="impressum.html">Impressum</a> ·
+  <a href="datenschutz.html">Datenschutz</a> ·
+  <a href="disclaimer.html">Disclaimer</a>
+  <div class="footer-aff">Diese Seite enthält gekennzeichnete Affiliate- bzw. Empfehlungslinks.</div>
+  <div style="margin-top:8px">© Smart Remote Life</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>1:1 Gespräch anfragen | Smart Remote Life</title>
+<meta name="description" content="Kostenlose Anfrage für ein kostenpflichtiges 1:1 Gespräch zu Remote Job, Auswandern, digitalem Business, Content, Pinterest und KI-Tools.">
+<style>
+:root{--ink:#102033;--muted:#69758a;--line:rgba(35,73,115,.10);--blue:#1d63ff;--cyan:#73dcff;--gold:#eeb44e}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+  background:radial-gradient(circle at top left,rgba(154,215,255,.38),transparent 34%),radial-gradient(circle at 80% 10%,rgba(244,183,201,.35),transparent 30%),linear-gradient(135deg,#fffdfb 0%,#f6f4ff 42%,#eefaff 100%);min-height:100vh
+}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(47,128,237,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(47,128,237,.065) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.72),transparent 65%)}
+.page{width:min(1220px,calc(100% - 32px));margin:18px auto 52px}
+.topnav{margin-bottom:14px}.home{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;border-radius:999px;text-decoration:none;color:var(--ink);font-size:1.15rem;background:rgba(255,255,255,.82);border:1px solid var(--line);box-shadow:0 10px 24px rgba(16,32,61,.08)}
+.hero{padding:40px 42px;border-radius:34px;background:linear-gradient(120deg,rgba(255,255,255,.90),rgba(255,255,255,.68)),radial-gradient(circle at 20% 20%,rgba(154,215,255,.8),transparent 22%),radial-gradient(circle at 80% 30%,rgba(255,177,153,.75),transparent 22%),radial-gradient(circle at 60% 90%,rgba(185,243,223,.75),transparent 24%);border:1px solid rgba(255,255,255,.9);box-shadow:0 24px 70px rgba(16,32,51,.10);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(47,128,237,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(47,128,237,.08) 1px,transparent 1px);background-size:38px 38px;mask-image:linear-gradient(90deg,transparent,black 18%,black 82%,transparent);pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:800px}.eyebrow{display:inline-flex;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.78);border:1px solid var(--line);font-size:.9rem;color:var(--muted);margin-bottom:18px}
+h1{margin:0;font-size:clamp(2.3rem,5vw,4.8rem);letter-spacing:-.055em;line-height:.94}.lead{margin:22px 0 0;font-size:clamp(1.05rem,2vw,1.28rem);line-height:1.65;color:#334155}
+.section-head{margin:38px 0 18px}.section-head h2{margin:0 0 7px;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.05em}.section-head p{margin:0;color:var(--muted)}
+.layout{display:grid;grid-template-columns:160px minmax(0,1fr) 160px;gap:24px;align-items:start}.banner{position:sticky;top:18px}.banner img{display:block;width:160px;height:600px;object-fit:contain}
+.card{background:rgba(255,255,255,.84);border:1px solid rgba(255,255,255,.92);border-radius:28px;padding:34px 40px;box-shadow:0 20px 56px rgba(16,32,51,.10);backdrop-filter:blur(12px)}
+.badge{display:inline-flex;padding:7px 12px;border-radius:999px;background:rgba(238,180,78,.16);color:#73521d;font-size:13px;font-weight:850;margin-bottom:14px}.card h3{margin:0 0 13px;font-size:clamp(2rem,4vw,2.7rem);line-height:1.04;letter-spacing:-.05em}.copy{color:var(--muted);font-size:17px;line-height:1.65;margin:0 0 18px}.price{display:flex;align-items:baseline;gap:10px;margin:8px 0 24px}.price strong{font-size:44px;letter-spacing:-.05em}.price span{color:var(--muted)}
+.form label{display:block;margin:18px 0 7px;font-weight:850;color:#142439}input,textarea{width:100%;border:1px solid rgba(16,32,51,.12);border-radius:17px;padding:14px 15px;font:inherit;color:var(--ink);background:rgba(255,255,255,.88);outline:none}textarea{min-height:105px;resize:vertical}.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:10px}.check{display:flex;gap:9px;align-items:flex-start;padding:13px;border-radius:17px;background:rgba(255,255,255,.64);border:1px solid rgba(16,32,51,.08);font-weight:750;color:#324257}.check input{width:auto;margin:3px 0 0}.btn{width:100%;margin-top:24px;padding:17px 22px;border:0;border-radius:999px;background:linear-gradient(135deg,#1d63ff 0%,#52ceff 52%,#eeb44e 100%);color:white;font-size:17px;font-weight:900;cursor:pointer;box-shadow:0 17px 38px rgba(29,99,255,.20)}.note{margin-top:14px;padding:14px 16px;border-radius:18px;color:#627086;line-height:1.5;font-size:14px;background:rgba(255,255,255,.58)}
+footer{text-align:center;margin-top:42px;color:#6a7587;font-size:.84rem}footer a{margin:0 7px;color:#245fff}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.card{order:1}.left{order:2}.right{order:3}.banner{position:relative;top:auto;display:flex;justify-content:center}.banner img{height:auto;max-height:600px}.check-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.page{width:min(100% - 20px,1220px)}.hero{padding:30px 24px;border-radius:26px}.card{padding:26px 22px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <nav class="topnav"><a class="home" href="index.html" aria-label="Zur Startseite">⌂</a></nav>
+  <header class="hero"><div class="hero-inner"><div class="eyebrow">✨ Blog · Ideen · Tools · digitale Freiheit</div><h1>Smart Remote Life</h1><p class="lead">Eine Sammlung hilfreicher Artikel rund um digitales Arbeiten, Reisen, Auswandern, Business, Familie und smarte Tools für ein freieres Leben.</p></div></header>
+
+  <div class="section-head"><h2>1:1 Gespräch anfragen</h2><p>Für Remote Job, Auswandern, digitales Business, Content, Social Media, Pinterest, Blog, Affiliate und KI-Tools.</p></div>
+
+  <section class="layout">
+    <aside class="banner left"><img src="banner-1-1-links.png" alt="Individuelle Impulse für Remote Job, Business, Content und Auswandern."></aside>
+
+    <section class="card">
+      <span class="badge">Anfrage kostenlos · Gespräch kostenpflichtig</span>
+      <h3>Persönliche Orientierung für deinen nächsten Schritt</h3>
+      <p class="copy">Du kannst kostenlos eine Anfrage stellen. Ich schaue mir deine Angaben vorab an und melde mich per E-Mail mit einem möglichen Termin zurück. So kann ich mich gezielt auf dein Thema vorbereiten.</p>
+      <p class="copy">Das persönliche 1:1 Gespräch kostet als Einführungspreis <strong>50 € für ca. 60 Minuten</strong>. Die Bezahlung erfolgt vor dem Termin, zum Beispiel per PayPal. Nach Zahlungseingang wird der Termin verbindlich bestätigt.</p>
+      <div class="price"><strong>50 €</strong><span>/ ca. 60 Minuten</span></div>
+
+      <form id="request-form" class="form">
+        <label for="name">Dein Name</label>
+        <input id="name" name="name" type="text" placeholder="Dein Name" required>
+
+        <label for="email">Deine E-Mail-Adresse</label>
+        <input id="email" name="email" type="email" placeholder="name@email.de" required>
+
+        <label for="status">Wo stehst du gerade?</label>
+        <textarea id="status" name="status" placeholder="Beschreibe kurz deine aktuelle Situation." required></textarea>
+
+        <label for="goal">Was ist dein Ziel?</label>
+        <textarea id="goal" name="goal" placeholder="Was möchtest du erreichen oder sortieren?" required></textarea>
+
+        <label>Welche Themen passen zu deiner Anfrage?</label>
+        <div class="check-grid">
+          <label class="check"><input name="topics" value="Remote Job" type="checkbox"> Remote Job</label>
+          <label class="check"><input name="topics" value="Auswandern" type="checkbox"> Auswandern</label>
+          <label class="check"><input name="topics" value="Digitales Business" type="checkbox"> Digitales Business</label>
+          <label class="check"><input name="topics" value="Content & Social Media" type="checkbox"> Content &amp; Social Media</label>
+          <label class="check"><input name="topics" value="Pinterest, Blog & Affiliate" type="checkbox"> Pinterest, Blog &amp; Affiliate</label>
+          <label class="check"><input name="topics" value="KI-Tools & Struktur" type="checkbox"> KI-Tools &amp; Struktur</label>
+        </div>
+
+        <label for="support">Wobei brauchst du konkret Unterstützung?</label>
+        <textarea id="support" name="support" placeholder="Zum Beispiel: Bewerbung, Content-Plan, Pinterest-Start, Blog-Idee, Auswanderungs-Planung oder Struktur." required></textarea>
+
+        <label for="availability">Welche Wochentage und Uhrzeiten passen dir ungefähr?</label>
+        <input id="availability" name="availability" type="text" placeholder="z. B. Montag bis Freitag vormittags oder Dienstag/Donnerstag abends" required>
+
+        <button class="btn" type="submit">Anfrage per E-Mail absenden</button>
+        <div class="note">Beim Klick öffnet sich dein E-Mail-Programm mit deinen Angaben. Die Anfrage ist kostenlos. Das 1:1 Gespräch wird erst nach Terminbestätigung und Zahlung verbindlich.</div>
+      </form>
+    </section>
+
+    <aside class="banner right"><img src="banner-1-1-rechts.png" alt="Remote-Arbeit mit Laptop an einer mediterranen Küste."></aside>
+  </section>
+
+  <footer><a href="index.html">Startseite</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="disclaimer.html">Disclaimer</a></footer>
+</main>
+<script>
+document.getElementById('request-form').addEventListener('submit', function(event){
+  event.preventDefault();
+  if (!this.reportValidity()) return;
+  const selected = Array.from(document.querySelectorAll('input[name="topics"]:checked')).map(el => el.value);
+  const subject = 'Anfrage 1:1 Gespräch – Smart Remote Life';
+  const body = [
+    'Hallo Marit,',
+    '',
+    'ich möchte ein kostenpflichtiges 1:1 Gespräch anfragen.',
+    '',
+    'Name: ' + document.getElementById('name').value,
+    'E-Mail: ' + document.getElementById('email').value,
+    '',
+    'Wo stehe ich gerade?',
+    document.getElementById('status').value,
+    '',
+    'Mein Ziel:',
+    document.getElementById('goal').value,
+    '',
+    'Themen: ' + (selected.length ? selected.join(', ') : 'keine Auswahl'),
+    '',
+    'Dabei brauche ich Unterstützung:',
+    document.getElementById('support').value,
+    '',
+    'Mögliche Wochentage/Uhrzeiten:',
+    document.getElementById('availability').value,
+    '',
+    'Viele Grüße'
+  ].join('\n');
+  window.location.href = 'mailto:mette.tentary@outlook.de?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Articles | Smart Remote Life</title>
+<meta name="description" content="English articles about remote jobs, creator tools and digital work from Smart Remote Life.">
+<style>
+:root{
+  --ink:#102033; --muted:#6b7280; --gold:#d9aa45; --sky:#9ad7ff;
+  --lavender:#c9b8ff; --mint:#b9f3df; --line:rgba(16,32,51,.10);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);min-height:100vh;
+  background:
+    linear-gradient(rgba(47,128,237,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(47,128,237,.055) 1px,transparent 1px),
+    radial-gradient(circle at 0 0,rgba(154,215,255,.38),transparent 34%),
+    radial-gradient(circle at 82% 9%,rgba(201,184,255,.30),transparent 30%),
+    linear-gradient(135deg,#fffdfb 0%,#f6f4ff 42%,#eefaff 100%);
+  background-size:38px 38px,38px 38px,auto,auto,auto;
+}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+.page{width:min(1040px,calc(100% - 32px));margin:0 auto;padding:24px 0 50px}
+.home{display:grid;place-items:center;width:44px;height:44px;border-radius:999px;background:#fff;border:1px solid var(--line);box-shadow:0 10px 24px rgba(16,32,51,.08);margin-bottom:16px}
+.hero{padding:42px 30px;border-radius:32px;background:rgba(255,255,255,.80);border:1px solid rgba(255,255,255,.92);box-shadow:0 22px 58px rgba(16,32,51,.08)}
+h1{margin:0;font-size:clamp(2.3rem,5vw,4.4rem);letter-spacing:-.05em;line-height:.98}
+.hero p{max-width:720px;color:#465469;font-size:1.08rem;line-height:1.65}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.card{padding:24px;border-radius:26px;background:rgba(255,255,255,.88);border:1px solid var(--line);box-shadow:0 18px 46px rgba(16,32,51,.07)}
+.card img{width:100%;height:210px;object-fit:cover;border-radius:20px;margin-bottom:18px}
+.card h2{margin:0 0 9px;font-size:1.55rem}
+.card p{margin:0;color:var(--muted);line-height:1.55}
+.badge{display:inline-flex;margin-top:15px;padding:7px 11px;border-radius:999px;background:linear-gradient(135deg,#e8e0ff,#dff8ff);font-size:.82rem;font-weight:800}
+footer{text-align:center;color:#7b8290;font-size:.82rem;margin-top:36px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.hero{padding:32px 22px}.card img{height:180px}}
+</style>
+</head>
+<body>
+<main class="page">
+  <a class="home" href="index.html" aria-label="Back to Smart Remote Life">⌂</a>
+  <section class="hero">
+    <h1>Smart Remote Life<br>English Articles</h1>
+    <p>English guides for people looking for remote work, practical creator tools and a more flexible digital lifestyle. This section will grow step by step.</p>
+  </section>
+
+  <section class="grid" aria-label="English article topics">
+    <article class="card">
+      <img src="remote-jobs-hero.png" alt="Remote work with laptop and mountain view">
+      <h2>Remote Jobs</h2>
+      <p>Guides about finding remote work, international job platforms and building a stronger remote application.</p>
+      <span class="badge">Article coming next</span>
+    </article>
+
+    <article class="card">
+      <img src="tech-header-real.png" alt="Content creator filming in a home studio">
+      <h2>Creator Tools & Tech</h2>
+      <p>Practical guides for smartphone video, creator equipment and content production without unnecessary tech overload.</p>
+      <span class="badge">Coming soon</span>
+    </article>
+  </section>
+
+  <footer>© Smart Remote Life</footer>
+</main>
+</body>
+</html>

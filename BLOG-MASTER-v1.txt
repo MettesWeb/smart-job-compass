@@ -1,0 +1,30 @@
+SMART REMOTE LIFE – BLOG MASTER v1
+
+Feste Struktur:
+1. Brand-Hintergrund mit feinem Grid
+2. Home-Icon
+3. Hero: Text + Bildverlauf
+4. Freie Einleitung
+5. Inhaltsübersicht
+6. W-Fragen / SEO-Abschnitte als freie Texte
+7. Affiliate-/Produktblöcke nur dort, wo Produkte empfohlen werden
+8. 2–4 Mood-Bilder zwischen längeren Abschnitten
+9. FAQ
+10. Abschluss / CTA
+11. Footer
+12. Mobile: kompakte Blocks
+13. Wide Desktop ab ca. 1500 px: Seitenbanner links/rechts
+14. KI-Bilder: kleine unaufdringliche „KI“-Kennzeichnung
+15. Accessibility: Alt-Texte, Fokuszustände, Skip-Link, saubere Überschriften
+
+Pro neuem Artikel variabel:
+- Titel + Meta Description
+- Hauptfarbe / Akzentfarbe
+- Hero-Bild
+- 2–4 Zwischenbilder
+- linker/rechter Desktop-Banner
+- Affiliate-/Produktlinks
+- Artikeltext / W-Fragen / FAQ
+
+Ziel:
+Kein neues Layout pro Artikel. Nur Inhalte, Farben, Bilder und Links austauschen.
